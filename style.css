@@ -278,6 +278,38 @@ h2 {
     box-shadow: 0 0 25px #d8b3ff;
 }
 
+/* GALERIA */
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.galeria-item {
+    display: block;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.galeria-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(162, 89, 255, 0.3);
+}
+
+.galeria-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.galeria-item:hover img {
+    transform: scale(1.1);
+}
+
 /* LISTAS */
 ul {
     list-style: disc inside;

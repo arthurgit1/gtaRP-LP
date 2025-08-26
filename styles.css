@@ -1,3 +1,95 @@
+/* ------------------ */
+/* ANIMAÇÕES GERAIS   */
+/* ------------------ */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes scaleUp {
+  from { transform: scale(0.95); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+/* Aplicar fade-in padrão em seções */
+section {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeInUp 1s ease forwards;
+}
+
+/* Delay progressivo para cada seção */
+.starter-pack { animation-delay: 0.2s; }
+.planos       { animation-delay: 0.4s; }
+.noticias     { animation-delay: 0.6s; }
+.como-jogar   { animation-delay: 0.8s; }
+.contato      { animation-delay: 1s; }
+
+/* Hero com fade-in suave */
+.hero .hero-content {
+  opacity: 0;
+  animation: fadeIn 1.5s ease forwards;
+  animation-delay: 0.3s;
+}
+
+/* Cards de planos e notícias animados */
+.plano-card, .news-item {
+  opacity: 0;
+  animation: scaleUp 0.8s ease forwards;
+}
+
+/* delay para criar efeito "um atrás do outro" */
+.plano-card:nth-child(1) { animation-delay: 0.2s; }
+.plano-card:nth-child(2) { animation-delay: 0.4s; }
+.plano-card:nth-child(3) { animation-delay: 0.6s; }
+
+.news-item:nth-child(1) { animation-delay: 0.2s; }
+.news-item:nth-child(2) { animation-delay: 0.4s; }
+
+/* ------------------ */
+/* HOVER INTERATIVOS  */
+/* ------------------ */
+.plano-card:hover, .news-item:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-primary:hover, .btn-outline:hover {
+  transform: scale(1.07);
+}
+
+/* Links animados no hover */
+.menu li a {
+  position: relative;
+}
+.menu li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background: #f1c40f;
+  transition: width 0.3s ease;
+}
+.menu li a:hover::after {
+  width: 100%;
+}
+
+
+
 /* RESET */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body {

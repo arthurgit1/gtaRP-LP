@@ -5,7 +5,7 @@ hamburger.addEventListener('click', () => {
   menu.classList.toggle('active');
 });
 
-// PARALLAX HERO
+// PARALLAX HERO COM MOUSE
 const parallaxBg = document.querySelector('.parallax-bg');
 document.addEventListener('mousemove', (e) => {
   const x = (e.clientX / window.innerWidth - 0.5) * 30;

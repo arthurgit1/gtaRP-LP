@@ -3,39 +3,88 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cidade Alta RP - Demo</title>
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-
-  <!-- CSS -->
+  <title>Cidade Alta RP</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+  <!-- HEADER -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">CidadeAltaRP</div>
+      <ul class="menu">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#starter-pack">Starter Pack</a></li>
+        <li><a href="#planos">Planos</a></li>
+        <li><a href="#noticias">Notícias</a></li>
+        <li><a href="#como-jogar">Como Jogar</a></li>
+      </ul>
+      <div class="auth-buttons">
+        <button class="btn-outline">Login</button>
+        <button class="btn-primary">Entrar</button>
+      </div>
+      <button class="hamburger" id="hamburger">☰</button>
+    </nav>
+  </header>
+
   <!-- HERO -->
-  <section class="hero">
-    <div class="parallax-bg"></div>
-
-    <!-- Ícones decorativos -->
-    <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="icon1" class="floating-icon icon1">
-    <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="icon2" class="floating-icon icon2">
-    <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="icon3" class="floating-icon icon3">
-
+  <section class="hero" id="hero">
     <div class="hero-content">
-      <h1>Bem-vindo ao Cidade Alta RP</h1>
-      <p>O maior servidor de Roleplay do Brasil, com a experiência mais imersiva.</p>
-      <a href="#como-jogar" class="btn-primary">Começar Agora</a>
+      <h1>O MAIOR SERVIDOR DE RP<br>DA AMÉRICA LATINA</h1>
+      <p>Viva a experiência do roleplay no GTA V de forma única.</p>
+      <a href="#starter-pack" class="btn-primary">JOGAR AGORA</a>
     </div>
   </section>
 
-  <!-- SEÇÃO EXTRA -->
-  <section id="como-jogar">
-    <h2>Como Jogar</h2>
-    <p>Baixe o FiveM, crie sua conta e entre na cidade para viver sua história.</p>
+  <!-- STARTER PACK -->
+  <section id="starter-pack">
+    <h2>Starter Pack</h2>
+    <p>O pontapé inicial que sua história merece!</p>
   </section>
 
-  <!-- JavaScript -->
+  <!-- PLANOS -->
+  <section id="planos">
+    <h2>Conheça os Planos</h2>
+    <div class="grid-planos">
+      <div class="plano-card">Plano Básico</div>
+      <div class="plano-card">Plano VIP</div>
+      <div class="plano-card">Plano Premium</div>
+    </div>
+  </section>
+
+  <!-- NOTÍCIAS -->
+  <section id="noticias">
+    <h2>Notícias</h2>
+    <div class="news-grid">
+      <div class="news-item">
+        <h3>[6.1.4] Novidades Agosto</h3>
+        <p>Novos sistemas de eventos, veículos e muito mais.</p>
+        <button class="btn-outline">Ver Mais</button>
+      </div>
+      <div class="news-item">
+        <h3>[6.1.3] Novidades Julho</h3>
+        <p>Atualizações importantes para melhorar sua experiência.</p>
+        <button class="btn-outline">Ver Mais</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMO JOGAR -->
+  <section id="como-jogar">
+    <h2>Como Jogar</h2>
+    <ul>
+      <li>Possuir Allowlist no servidor (<a href="#">clique aqui</a>).</li>
+      <li>Ter GTA V original (Steam, Epic, Rockstar Launcher).</li>
+      <li>Instalar o FiveM (<a href="#">clique aqui</a>).</li>
+    </ul>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Cidade Alta RP. Todos os direitos reservados.</p>
+  </footer>
+
   <script src="script.js"></script>
 </body>
 </html>

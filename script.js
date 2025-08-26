@@ -54,4 +54,6 @@ const appearOnScroll = new IntersectionObserver((entries, observer) => {
     });
 }, appearOptions);
 
+const faders = document.querySelectorAll('.fade-up');
+
 faders.forEach(fader => appearOnScroll.observe(fader));

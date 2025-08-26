@@ -10,8 +10,6 @@
 
   <link rel="stylesheet" href="styles.css">
 </head>
-
-
 <body>
   <!-- HEADER -->
   <header>
@@ -34,7 +32,7 @@
       </div>
 
       <!-- Botão Mobile -->
-      <button class="hamburger" id="hamburger">☰</button>
+      <button class="hamburger" id="hamburger" aria-label="Abrir menu">☰</button>
     </nav>
 
     <!-- Menu Mobile -->
@@ -53,13 +51,15 @@
   </header>
 
   <!-- HERO -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1>O MAIOR SERVIDOR DE RP<br>DA AMÉRICA LATINA</h1>
-      <p>Viva a experiência do roleplay no GTA V de forma única.</p>
-      <button class="btn-primary">JOGAR AGORA</button>
-    </div>
-  </section>
+<section class="hero">
+  <div class="parallax-bg"></div> <!-- Fundo dinâmico -->
+  <div class="hero-content">
+    <h1>Bem-vindo ao Cidade Alta RP</h1>
+    <p>Viva a experiência mais realista de roleplay no Brasil.</p>
+    <a href="#como-jogar" class="btn-primary">Começar Agora</a>
+  </div>
+</section>
+
 
   <!-- STARTER PACK -->
   <section class="starter-pack container">
@@ -108,9 +108,9 @@
   <section class="contato container">
     <h2>Entre em Contato</h2>
     <form>
-      <input type="text" placeholder="Seu Nome" required>
-      <input type="email" placeholder="Seu Email" required>
-      <textarea placeholder="Sua Mensagem" required></textarea>
+      <input type="text" placeholder="Seu Nome" required aria-label="Nome">
+      <input type="email" placeholder="Seu Email" required aria-label="Email">
+      <textarea placeholder="Sua Mensagem" required aria-label="Mensagem"></textarea>
       <button class="btn-primary" type="submit">Enviar</button>
     </form>
   </section>

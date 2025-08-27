@@ -1,21 +1,21 @@
-// MENU HAMBURGER MOBILE
+// MENU HAMBURGER RESPONSIVO
 const hamburger = document.getElementById('hamburger');
 const menu = document.querySelector('.menu');
 const navLinks = document.querySelectorAll('.menu li a');
 
-// Adiciona ou remove a classe 'active' ao clicar no hambúrguer
+// Adiciona ou remove a classe 'active' para abrir/fechar o menu
 hamburger.addEventListener('click', () => {
     menu.classList.toggle('active');
 });
 
-// Remove a classe 'active' ao clicar em um link do menu, fechando-o
+// Fecha o menu ao clicar em um link de navegação
 navLinks.forEach(link => {
     link.addEventListener('click', () => {
         menu.classList.remove('active');
     });
 });
 
-// EFEITO PARALLAX NO HERO E FADE-IN AO SCROLL
+// EFEITO PARALLAX E FADE-IN AO SCROLL
 const parallaxBg = document.querySelector('.parallax-bg');
 const faders = document.querySelectorAll('.fade-up');
 const appearOptions = {
@@ -40,17 +40,17 @@ document.addEventListener('mousemove', (e) => {
     updateParallax();
 });
 
-// Função para aplicar a transformação no elemento de parallax
+// Função que aplica a transformação no elemento do parallax
 function updateParallax() {
     const newTransform = `translate(${mouseX}px, ${mouseY}px) translateY(${scrollY * 0.3}px) scale(1.1)`;
     parallaxBg.style.transform = newTransform;
 }
 
-// FADE-IN AO SCROLL USANDO IntersectionObserver
+// FADE-IN AO SCROLL com IntersectionObserver
 const appearOnScroll = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            // Adiciona a classe 'show' para fazer a transição
+            // Adiciona a classe 'show' para iniciar a transição
             entry.target.classList.add('show');
             // Deixa de observar o elemento para que a animação ocorra apenas uma vez
             observer.unobserve(entry.target);

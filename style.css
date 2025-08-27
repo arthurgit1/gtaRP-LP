@@ -82,6 +82,7 @@ header {
     color: #111;
     font-weight: 700;
     transition: 0.3s;
+    padding: 15px;
 }
 
 .btn-primary:hover {

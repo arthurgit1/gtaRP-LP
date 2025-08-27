@@ -46,7 +46,7 @@ header {
 .navbar .menu li a {
     color: #fff;
     text-decoration: none;
-    transition: 0.3s;
+    transition: color 0.3s ease, text-shadow 0.3s ease; /* Transições mais suaves */
 }
 
 .navbar .menu li a:hover {
@@ -60,7 +60,7 @@ header {
     border-radius: 20px;
     border: none;
     cursor: pointer;
-    transition: 0.3s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transições adicionadas */
     font-weight: 600;
 }
 
@@ -81,8 +81,7 @@ header {
     background: linear-gradient(135deg, #a259ff, #d8b3ff);
     color: #111;
     font-weight: 700;
-    transition: 0.3s;
-    padding: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transições adicionadas */
 }
 
 .btn-primary:hover {
@@ -117,7 +116,7 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('https://images.unsplash.com/photo-1549924231-f129b911e442?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+    background: url('/img/3.png') center/cover no-repeat; /* AQUI! */
     z-index: 0;
     transform: translate(0, 0) scale(1.1);
     transition: transform 0.1s linear;
@@ -222,7 +221,7 @@ h2 {
 }
 
 .plano-card:hover {
-    transform: translateY(-10px) scale(1.02);
+    transform: translateY(-10px) scale(1.02); /* Adicionado zoom */
     box-shadow: 0 10px 30px rgba(162, 89, 255, 0.3);
 }
 
@@ -322,7 +321,7 @@ ul {
 ul li a {
     color: #a259ff;
     text-decoration: none;
-    transition: 0.3s;
+    transition: color 0.3s ease, text-shadow 0.3s ease; /* Transições mais suaves */
 }
 
 ul li a:hover {

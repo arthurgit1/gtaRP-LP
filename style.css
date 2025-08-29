@@ -744,3 +744,18 @@ section:nth-of-type(odd) {
       display: none;
     }
 }
+
+/* Alinhamento de botões */
+.botoes-container-align {
+    display: flex;
+    justify-content: flex-end; /* Alinha o conteúdo à direita */
+    width: 100%;
+    margin-top: 30px; /* Adiciona um espaço acima do botão */
+}
+
+/* Alinhamento em telas menores */
+@media (max-width: 768px) {
+    .botoes-container-align {
+        justify-content: center; /* Centraliza o botão em telas menores */
+    }
+}

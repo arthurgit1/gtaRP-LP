@@ -241,15 +241,23 @@ h2 {
 
 /* PLANOS */
 .planos-slider {
-    padding: 40px 0; /* Espaço para as setas não ficarem coladas */
+    padding: 40px 0;
     max-width: 1200px;
     margin: auto;
+}
+
+/* Estilo para cada slide do Swiper */
+.swiper-slide {
+    height: auto; /* Garante que o slide se adapte ao conteúdo */
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
 }
 
 .plano-card {
     background: #1a0a2a;
     border-radius: 15px;
-    padding: 25px;
+    padding: 30px; /* Aumentado para melhor espaçamento interno */
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     text-align: center;
@@ -257,7 +265,7 @@ h2 {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100%; /* Garante que todos os cards ocupem a altura do slide */
+    width: 100%; /* Garante que o card ocupe 100% do slide */
 }
 
 .plano-card:hover {
@@ -266,19 +274,25 @@ h2 {
 }
 
 .plano-header img {
-    width: 80px;
-    margin-bottom: 15px;
+    width: 90px; /* Ícone um pouco maior */
+    margin-bottom: 20px;
+}
+
+.plano-header h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
 }
 
 .plano-body ul {
     list-style: none;
     padding: 0;
-    margin: 20px 0;
+    margin: 25px 0;
     text-align: left;
+    flex-grow: 1; /* Permite que a lista de itens cresça para preencher o espaço, alinhando os botões */
 }
 
 .plano-body ul li {
-    padding: 8px 0;
+    padding: 10px 0; /* Padding ajustado */
     border-bottom: 1px solid #2a1040;
 }
 
@@ -286,23 +300,31 @@ h2 {
     border-bottom: none;
 }
 
+/* Estilo para os botões dentro dos cards */
+.plano-card .btn-primary {
+    width: 100%; /* Botão ocupa a largura total do card */
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-top: auto; /* Garante que o botão fique na parte inferior do card */
+}
+
 /* ESTILOS PARA AS SETAS DO SWIPER */
 .planos-slider .swiper-button-next,
 .planos-slider .swiper-button-prev {
-    color: #a259ff; /* Sua cor principal */
-    transition: 0.3s;
+    color: #a259ff;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 .planos-slider .swiper-button-next:hover,
 .planos-slider .swiper-button-prev:hover {
     color: #d8b3ff;
-    text-shadow: 0 0 10px #d8b3ff;
     transform: scale(1.2);
 }
 
-/* ESTILO PARA O NOVO BOTÃO */
+/* ESTILO PARA O NOVO BOTÃO VER TODOS */
 .btn-ver-todos {
-    margin-top: 40px; /* Espaço acima do botão */
-    display: inline-block; /* Necessário para aplicar margin-top */
+    margin-top: 40px;
+    display: inline-block;
     padding: 12px 24px;
 }
 

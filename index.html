@@ -5,155 +5,127 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MONACO RP</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
-        <nav class="navbar">
-            <div class="logo">MONACO RP</div>
-            <ul class="menu">
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#starter-pack">Starter Pack</a></li>
-                <li><a href="#planos">Planos</a></li>
-                <li><a href="#noticias">Notícias</a></li>
-                <li><a href="#galeria">Galeria</a></li>
-                <li><a href="#como-jogar">Como Jogar</a></li>
-            </ul>
-            <div class="auth-buttons">
-                <button class="btn-outline">Login</button>
-                <button class="btn-primary">Entrar</button>
-            </div>
-            <button class="hamburger" id="hamburger">☰</button>
-        </nav>
-    </header>
+        <nav class="navbar">
+            <div class="logo">MONACO RP</div>
+            <ul class="menu">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#starter-pack">Starter Pack</a></li>
+                <li><a href="#planos">Planos</a></li>
+                <li><a href="#noticias">Notícias</a></li>
+                <li><a href="#galeria">Galeria</a></li>
+                <li><a href="#como-jogar">Como Jogar</a></li>
+            </ul>
+            <div class="auth-buttons">
+                <button class="btn-outline">Login</button>
+                <button class="btn-primary">Entrar</button>
+            </div>
+            <button class="hamburger" id="hamburger">☰</button>
+        </nav>
+    </header>
 
-    <section class="hero" id="hero">
-        <div class="parallax-bg"></div>
-        <div class="hero-content fade-up">
-            <h1>Bem-vindo!</h1>
-            <p>Seu texto aqui...</p>
-        </div>
-    </section>
+    <section class="hero" id="hero">
+        <div class="parallax-bg"></div>
+        <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" class="floating-icon icon1">
+        <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" class="floating-icon icon2">
+        <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" class="floating-icon icon3">
+        <div class="hero-content fade-up">
+            <h1>O MAIOR SERVIDOR DE RP<br>DA AMÉRICA LATINA</h1>
+            <p>Viva a experiência do roleplay no GTA V de forma única.</p>
+            <a href="#starter-pack" class="btn-primary">JOGAR AGORA</a>
+        </div>
+    </section>
 
-    <section id="starter-pack" class="fade-up">
-        <h2>Starter Pack</h2>
-        <p>O pontapé inicial que sua história merece!</p>
-    </section>
+    <section id="starter-pack" class="fade-up">
+        <h2>Starter Pack</h2>
+        <p>O pontapé inicial que sua história merece!</p>
+    </section>
+
 
     <section id="planos" class="fade-up">
         <h2>Conheça os Planos</h2>
         <p>Garanta acesso a benefícios exclusivos dentro do servidor.</p>
-        <div class="grid-planos">
-            <div class="plano-card fade-up">
-                <div class="plano-header">
-                    <img src="https://i.ibb.co/L95t2t2/plano-basico.png" alt="Plano Básico">
-                    <h3>Plano Básico</h3>
+
+        <div class="swiper planos-slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="plano-card">
+                        <div class="plano-header">
+                            <img src="https://i.ibb.co/L95t2t2/plano-basico.png" alt="Plano Básico">
+                            <h3>Plano Básico</h3>
+                        </div>
+                        <div class="plano-body">
+                            <ul>
+                                <li>Prioridade na Fila</li>
+                                <li>100k em Moeda do Jogo</li>
+                                <li>Kit de Boas-vindas</li>
+                            </ul>
+                        </div>
+                        <a href="#" class="btn-primary">COMPRAR</a>
+                    </div>
                 </div>
-                <div class="plano-body">
-                    <ul>
-                        <li><i class="fas fa-check-circle"></i> Prioridade na Fila</li>
-                        <li><i class="fas fa-check-circle"></i> 100k em Moeda do Jogo</li>
-                        <li><i class="fas fa-check-circle"></i> Kit de Boas-vindas</li>
-                    </ul>
+                <div class="swiper-slide">
+                    <div class="plano-card">
+                        <div class="plano-header">
+                            <img src="https://i.ibb.co/L95t2t2/plano-basico.png" alt="Plano VIP">
+                            <h3>Plano VIP</h3>
+                        </div>
+                        <div class="plano-body">
+                            <ul>
+                                <li>Prioridade na Fila</li>
+                                <li>250k em Moeda do Jogo</li>
+                                <li>Kit de Boas-vindas Aprimorado</li>
+                            </ul>
+                        </div>
+                        <a href="#" class="btn-primary">COMPRAR</a>
+                    </div>
                 </div>
-                <a href="#" class="btn-primary">COMPRAR</a>
+                <div class="swiper-slide">
+                    <div class="plano-card">
+                        <div class="plano-header">
+                            <img src="https://i.ibb.co/L95t2t2/plano-basico.png" alt="Plano Premium">
+                            <h3>Plano Premium</h3>
+                        </div>
+                        <div class="plano-body">
+                            <ul>
+                                <li>Prioridade Máxima</li>
+                                <li>500k em Moeda do Jogo</li>
+                                <li>Acesso a Veículos VIP</li>
+                            </ul>
+                        </div>
+                        <a href="#" class="btn-primary">COMPRAR</a>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="plano-card">
+                        <div class="plano-header">
+                            <img src="https://i.ibb.co/L95t2t2/plano-basico.png" alt="Plano Magnata">
+                            <h3>Plano Magnata</h3>
+                        </div>
+                        <div class="plano-body">
+                            <ul>
+                                <li>Prioridade Absoluta</li>
+                                <li>1M em Moeda do Jogo</li>
+                                <li>Acesso a Mansões Exclusivas</li>
+                            </ul>
+                        </div>
+                        <a href="#" class="btn-primary">COMPRAR</a>
+                    </div>
+                </div>
             </div>
-            <div class="plano-card fade-up">
-                <div class="plano-header">
-                    <img src="https://i.ibb.co/L95t2t2/plano-basico.png" alt="Plano VIP">
-                    <h3>Plano VIP</h3>
-                </div>
-                <div class="plano-body">
-                    <ul>
-                        <li><i class="fas fa-check-circle"></i> Prioridade na Fila</li>
-                        <li><i class="fas fa-check-circle"></i> 250k em Moeda do Jogo</li>
-                        <li><i class="fas fa-check-circle"></i> Kit de Boas-vindas Aprimorado</li>
-                    </ul>
-                </div>
-                <a href="#" class="btn-primary">COMPRAR</a>
-            </div>
-            <div class="plano-card fade-up">
-                <div class="plano-header">
-                    <img src="https://i.ibb.co/L95t2t2/plano-basico.png" alt="Plano Premium">
-                    <h3>Plano Premium</h3>
-                </div>
-                <div class="plano-body">
-                    <ul>
-                        <li><i class="fas fa-check-circle"></i> Prioridade Máxima</li>
-                        <li><i class="fas fa-check-circle"></i> 500k em Moeda do Jogo</li>
-                        <li><i class="fas fa-check-circle"></i> Acesso a Veículos VIP</li>
-                    </ul>
-                </div>
-                <a href="#" class="btn-primary">COMPRAR</a>
-            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
         </div>
+
+        <a href="pagina-de-planos.html" class="btn-outline btn-ver-todos">VER TODOS OS PLANOS</a>
     </section>
 
-    <section id="noticias" class="fade-up">
-        <h2>Notícias</h2>
-        <div class="news-container">
-            <div class="news-item fade-up">
-                <h3>[6.1.4] Novidades Agosto</h3>
-                <p>Novos sistemas de eventos, veículos e muito mais.</p>
-                <button class="btn-outline">Ver Mais</button>
-            </div>
-            <div class="news-item fade-up">
-                <h3>[6.1.3] Novidades Julho</h3>
-                <p>Atualizações importantes para melhorar sua experiência.</p>
-                <button class="btn-outline">Ver Mais</button>
-            </div>
-            <div class="news-item fade-up">
-                <h3>[6.1.2] Atualização de Junho</h3>
-                <p>Otimizações de performance e correções de bugs.</p>
-                <button class="btn-outline">Ver Mais</button>
-            </div>
-            <div class="news-item fade-up">
-                <h3>[6.1.1] Lançamento Oficial</h3>
-                <p>O servidor está online e pronto para receber você!</p>
-                <button class="btn-outline">Ver Mais</button>
-            </div>
-        </div>
-    </section>
-
-    <section id="galeria" class="fade-up">
-        <h2>Galeria de Ostentação</h2>
-        <p>Confira alguns dos carros de luxo e itens exclusivos do servidor.</p>
-        <div class="galeria-grid">
-            <a href="https://via.placeholder.com/1000x800" target="_blank" class="galeria-item">
-                <img src="https://via.placeholder.com/500x400" alt="Carro de Luxo 1">
-            </a>
-            <a href="https://via.placeholder.com/1000x800" target="_blank" class="galeria-item">
-                <img src="https://via.placeholder.com/500x400" alt="Carro de Luxo 2">
-            </a>
-            <a href="https://via.placeholder.com/1000x800" target="_blank" class="galeria-item">
-                <img src="https://via.placeholder.com/500x400" alt="Carro de Luxo 3">
-            </a>
-            <a href="https://via.placeholder.com/1000x800" target="_blank" class="galeria-item">
-                <img src="https://via.placeholder.com/500x400" alt="Carro de Luxo 4">
-            </a>
-            <a href="https://via.placeholder.com/1000x800" target="_blank" class="galeria-item">
-                <img src="https://via.placeholder.com/500x400" alt="Carro de Luxo 5">
-            </a>
-            <a href="https://via.placeholder.com/1000x800" target="_blank" class="galeria-item">
-                <img src="https://via.placeholder.com/500x400" alt="Carro de Luxo 6">
-            </a>
-        </div>
-    </section>
-
-    <section id="como-jogar" class="fade-up">
-        <h2>Como Jogar</h2>
-        <ul>
-            <li>Possuir Allowlist no servidor (<a href="#">clique aqui</a>).</li>
-            <li>Ter GTA V original (Steam, Epic, Rockstar Launcher).</li>
-            <li>Instalar o FiveM (<a href="#">clique aqui</a>).</li>
-        </ul>
-    </section>
-
-    <footer class="fade-up">
-        <p>© 2025 MONACO RP. Todos os direitos reservados.</p>
-    </footer>
-
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

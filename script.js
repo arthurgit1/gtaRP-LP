@@ -60,3 +60,33 @@ const appearOnScroll = new IntersectionObserver((entries, observer) => {
 
 // Observa cada elemento com a classe 'fade-up'
 faders.forEach(fader => appearOnScroll.observe(fader));
+
+// INICIALIZAÇÃO DO CARROSSEL DE PLANOS
+const planosSlider = new Swiper('.planos-slider', {
+    // Opções
+    loop: true, // O carrossel volta ao início quando chega ao fim
+    spaceBetween: 30, // Espaço entre os slides
+    grabCursor: true, // Mostra o cursor de "agarrar"
+
+    // Define quantos slides são mostrados dependendo do tamanho da tela
+    breakpoints: {
+        // quando a tela for >= 0px
+        0: {
+            slidesPerView: 1,
+        },
+        // quando a tela for >= 768px
+        768: {
+            slidesPerView: 2,
+        },
+        // quando a tela for >= 1024px
+        1024: {
+            slidesPerView: 3,
+        }
+    },
+
+    // Setas de navegação
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+});

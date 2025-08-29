@@ -638,6 +638,40 @@ section:nth-of-type(odd) {
     .steps-container {
         grid-template-columns: 1fr;
     }
+
+    /* Regras do Hamburger */
+    .hamburger {
+        display: block;
+        z-index: 1001;
+    }
+
+    /* Regras do Menu Mobile */
+    .menu {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 70%;
+        height: 100vh;
+        background-color: var(--dark-gray);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        transition: left 0.4s ease-in-out;
+    }
+
+    /* Estado Ativo do Menu Mobile (com blur) */
+    .menu.active {
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        z-index: 1002;
+    }
+
+    .auth-buttons {
+      display: none;
+    }
 }
 
 /* --- ESTILOS ESPECÍFICOS PARA O HEADER (Revertendo para o padrão original) --- */
@@ -676,7 +710,7 @@ section:nth-of-type(odd) {
 }
 
 .logo img {
-    height: 80px; /* Altere este valor para o tamanho desejado */
+    height: 50px; /* Altere este valor para o tamanho desejado */
     width: auto;
     display: block;
 }

@@ -197,17 +197,23 @@ h2 {
     text-align: center;
 }
 
-.scroll-indicator span {
-    font-size: 0.9rem;
-    color: var(--light-gray);
-    animation: pulse 2s infinite;
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    /* Usamos Flexbox para um alinhamento perfeito */
+    display: flex;
+    flex-direction: column; /* Coloca os itens em coluna (um embaixo do outro) */
+    align-items: center;    /* Centraliza os itens horizontalmente */
 }
 
 .scroll-arrow {
     width: 25px;
     height: 25px;
-    border-right: 2px solid var(--purple-light);
-    border-bottom: 2px solid var(--purple-light);
+    border-right: 4px solid var(--purple-light);
+    border-bottom: 4px solid var(--purple-light);
     transform: rotate(45deg);
     margin-top: 10px;
     animation: bounce 2s infinite;
@@ -315,7 +321,7 @@ section:nth-of-type(odd) {
 }
 
 .plano-header img {
-    width: 80px;
+    height: 150px;
     margin-bottom: 15px;
 }
 
@@ -361,8 +367,11 @@ section:nth-of-type(odd) {
     overflow: hidden;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    /* ADICIONE ESTAS LINHAS: */
     display: flex;
     flex-direction: column;
+    min-height: 500px; /* Ajuste este valor se necessário */
 }
 
 .item-card:hover {
@@ -388,10 +397,12 @@ section:nth-of-type(odd) {
 
 .item-content {
     padding: 25px;
-    flex-grow: 1;
+    
+    /* ADICIONE ESTAS LINHAS: */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    flex-grow: 1; /* Permite que o contêiner de conteúdo preencha todo o espaço */
 }
 
 .item-content h3 {
@@ -758,4 +769,32 @@ section:nth-of-type(odd) {
     .botoes-container-align {
         justify-content: center; /* Centraliza o botão em telas menores */
     }
+}
+
+/* --- Rodapé --- */
+#rodape {
+    padding: 50px 0;
+    background-color: var(--dark-gray);
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#rodape .social-media {
+    margin-bottom: 20px;
+}
+
+#rodape .social-media a {
+    color: var(--white);
+    font-size: 1.5rem;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+#rodape .social-media a:hover {
+    color: var(--purple-light);
+}
+
+#rodape p {
+    color: var(--light-gray);
+    font-size: 0.9rem;
 }

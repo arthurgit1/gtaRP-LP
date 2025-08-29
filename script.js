@@ -128,17 +128,26 @@ document.addEventListener("DOMContentLoaded", function() {
     // FAQ Accordion
     function initializeFaq() {
         const faqItems = document.querySelectorAll('.faq-item');
+
         faqItems.forEach(item => {
             const question = item.querySelector('.faq-question');
+            
             question.addEventListener('click', () => {
+                // Primeiro, fecha todas as outras perguntas abertas
                 faqItems.forEach(otherItem => {
+                    const otherQuestion = otherItem.querySelector('.faq-question');
+                    const otherAnswer = otherItem.querySelector('.faq-answer');
+                    
+                    // Se o item não é o que foi clicado, remove a classe 'active'
                     if (otherItem !== item) {
-                        otherItem.querySelector('.faq-question').classList.remove('active');
-                        otherItem.querySelector('.faq-answer').classList.remove('active');
+                        otherQuestion.classList.remove('active');
+                        otherAnswer.classList.remove('active');
                     }
                 });
-                question.classList.toggle('active');
+
+                // Em seguida, alterna a classe 'active' do item clicado
                 const answer = item.querySelector('.faq-answer');
+                question.classList.toggle('active');
                 answer.classList.toggle('active');
             });
         });
@@ -203,5 +212,4 @@ document.addEventListener("DOMContentLoaded", function() {
             updateOnlinePlayers();
         }
     }
-
 });

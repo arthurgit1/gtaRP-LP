@@ -367,11 +367,9 @@ section:nth-of-type(odd) {
     overflow: hidden;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-    /* ADICIONE ESTAS LINHAS: */
     display: flex;
     flex-direction: column;
-    min-height: 500px; /* Ajuste este valor se necessário */
+    min-height: 500px;
 }
 
 .item-card:hover {
@@ -397,12 +395,10 @@ section:nth-of-type(odd) {
 
 .item-content {
     padding: 25px;
-    
-    /* ADICIONE ESTAS LINHAS: */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    flex-grow: 1; /* Permite que o contêiner de conteúdo preencha todo o espaço */
+    flex-grow: 1;
 }
 
 .item-content h3 {
@@ -602,79 +598,13 @@ section:nth-of-type(odd) {
 }
 
 .faq-answer.active {
-    max-height: 200px; /* Valor ajustável */
+    max-height: 1000px; /* Valor ajustável */
     padding: 20px;
 }
 
 .faq-answer p {
     line-height: 1.8;
 }
-
-/* Media Queries para responsividade */
-@media (max-width: 768px) {
-    h1 {
-        font-size: 2.5rem;
-    }
-    h2 {
-        font-size: 2rem;
-    }
-    .hero-content {
-        padding: 0 20px;
-    }
-    .hero-buttons {
-        flex-direction: column;
-        gap: 15px;
-    }
-    .btn-primary, .btn-discord {
-        padding: 12px 25px;
-    }
-    .starter-content {
-        flex-direction: column;
-        text-align: center;
-    }
-    .starter-image {
-        max-width: 100%;
-    }
-    .steps-container {
-        grid-template-columns: 1fr;
-    }
-
-    /* Regras do Hamburger */
-    .hamburger {
-        display: block;
-        z-index: 1001;
-    }
-
-    /* Regras do Menu Mobile */
-    .menu {
-        position: fixed;
-        top: 0;
-        left: -100%;
-        width: 70%;
-        height: 100vh;
-        background-color: var(--dark-gray);
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 40px;
-        transition: left 0.4s ease-in-out;
-    }
-
-    /* Estado Ativo do Menu Mobile (com blur) */
-    .menu.active {
-        left: 0;
-        background-color: rgba(0, 0, 0, 0.7);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        z-index: 1002;
-    }
-
-    .auth-buttons {
-      display: none;
-    }
-}
-
-/* --- ESTILOS ESPECÍFICOS PARA O HEADER (Revertendo para o padrão original) --- */
 
 /* --- ESTILOS DO HEADER (Ajustado para o seu HTML) --- */
 
@@ -783,6 +713,10 @@ section:nth-of-type(odd) {
 
     .menu.active {
         left: 0;
+        background-color: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        z-index: 1002;
     }
     
     .auth-buttons {

@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MONACO RP</title>
+    <title>MONACO RP - O Maior Servidor de RP da América Latina</title>
+    <meta name="description" content="Viva a experiência do roleplay no GTA V de forma única no Monaco RP, o maior servidor da América Latina.">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,76 +15,377 @@
     <header id="main-header"></header>
 
     <main>
+        <!-- Hero Section -->
         <section class="hero" id="hero">
             <div class="parallax-bg"></div>
+            <div class="hero-overlay"></div>
             <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" class="floating-icon icon1">
             <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" class="floating-icon icon2">
             <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" class="floating-icon icon3">
             <div class="hero-content fade-up">
                 <h1>O MAIOR SERVIDOR DE RP<br>DA AMÉRICA LATINA</h1>
                 <p>Viva a experiência do roleplay no GTA V de forma única.</p>
-                <a href="#starter-pack" class="btn-primary">JOGAR AGORA</a>
+                <div class="hero-buttons">
+                    <a href="#starter-pack" class="btn-primary">JOGAR AGORA</a>
+                    <a href="https://discord.gg" target="_blank" class="btn-discord">
+                        <i class="fab fa-discord"></i> ENTRAR NO DISCORD
+                    </a>
+                </div>
+                <div class="server-stats">
+                    <div class="stat">
+                        <span class="stat-number" id="online-players">1250</span>
+                        <span class="stat-label">JOGADORES ONLINE</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label">SERVIDOR ATIVO</span>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <span>Role para explorar</span>
+                <div class="scroll-arrow"></div>
             </div>
         </section>
 
+        <!-- Starter Pack Section -->
         <section id="starter-pack" class="fade-up">
-            <h2>Starter Pack</h2>
-            <p>O pontapé inicial que sua história merece!</p>
+            <div class="container">
+                <h2>Starter Pack</h2>
+                <p class="section-subtitle">O pontapé inicial que sua história merece!</p>
+                
+                <div class="starter-content">
+                    <div class="starter-image">
+                        <img src="img/starter-pack.jpg" alt="Starter Pack Monaco RP">
+                    </div>
+                    <div class="starter-info">
+                        <h3>Comece com vantagem no Monaco RP</h3>
+                        <ul class="starter-features">
+                            <li><i class="fas fa-check-circle"></i> <strong>Veículo inicial</strong> - Escolha seu primeiro carro</li>
+                            <li><i class="fas fa-check-circle"></i> <strong>Casa básica</strong> - Um lugar para chamar de seu</li>
+                            <li><i class="fas fa-check-circle"></i> <strong>$50.000</strong> - Dinheiro inicial para começar</li>
+                            <li><i class="fas fa-check-circle"></i> <strong>Roupas exclusivas</strong> - Itens personalizados</li>
+                            <li><i class="fas fa-check-circle"></i> <strong>Acesso prioritário</strong> - Entre no servidor mais rápido</li>
+                        </ul>
+                        <a href="#" class="btn-primary">OBTER STARTER PACK</a>
+                    </div>
+                </div>
+            </div>
         </section>
 
+        <!-- Planos Section -->
         <section id="planos" class="fade-up">
-            <h2>Conheça os Planos</h2>
-            <p>Garanta acesso a benefícios exclusivos dentro do servidor.</p>
+            <div class="container">
+                <h2>Conheça os Planos</h2>
+                <p class="section-subtitle">Garanta acesso a benefícios exclusivos dentro do servidor.</p>
 
-            <div class="swiper planos-slider">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="plano-card">
-                            <div class="plano-header"><img src="https://i.ibb.co/L95t2t2/plano-basico.png" alt="Plano Básico"><h3>Plano Básico</h3></div>
-                            <div class="plano-body"><ul><li>Prioridade na Fila</li><li>100k em Moeda do Jogo</li><li>Kit de Boas-vindas</li></ul></div>
-                            <a href="#" class="btn-primary">COMPRAR</a>
+                <div class="swiper planos-slider">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="plano-card">
+                                <div class="plano-header">
+                                    <img src="https://i.ibb.co/L95t2t2/plano-basico.png" alt="Plano Básico">
+                                    <h3>Plano Básico</h3>
+                                    <div class="plano-price">R$ 19,90</div>
+                                </div>
+                                <div class="plano-body">
+                                    <ul>
+                                        <li><i class="fas fa-check"></i> Prioridade na Fila</li>
+                                        <li><i class="fas fa-check"></i> 100k em Moeda do Jogo</li>
+                                        <li><i class="fas fa-check"></i> Kit de Boas-vindas</li>
+                                        <li><i class="fas fa-check"></i> 1 Veículo Básico</li>
+                                    </ul>
+                                </div>
+                                <div class="plano-footer">
+                                    <a href="#" class="btn-primary">COMPRAR AGORA</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="plano-card plano-popular">
+                                <div class="popular-badge">POPULAR</div>
+                                <div class="plano-header">
+                                    <img src="https://i.ibb.co/L95t2t2/plano-basico.png" alt="Plano VIP">
+                                    <h3>Plano VIP</h3>
+                                    <div class="plano-price">R$ 39,90</div>
+                                </div>
+                                <div class="plano-body">
+                                    <ul>
+                                        <li><i class="fas fa-check"></i> Prioridade na Fila</li>
+                                        <li><i class="fas fa-check"></i> 250k em Moeda do Jogo</li>
+                                        <li><i class="fas fa-check"></i> Kit de Boas-vindas Aprimorado</li>
+                                        <li><i class="fas fa-check"></i> 2 Veículos VIP</li>
+                                        <li><i class="fas fa-check"></i> Casa de Médio Padrão</li>
+                                    </ul>
+                                </div>
+                                <div class="plano-footer">
+                                    <a href="#" class="btn-primary">COMPRAR AGORA</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="plano-card">
+                                <div class="plano-header">
+                                    <img src="https://i.ibb.co/L95t2t2/plano-basico.png" alt="Plano Premium">
+                                    <h3>Plano Premium</h3>
+                                    <div class="plano-price">R$ 69,90</div>
+                                </div>
+                                <div class="plano-body">
+                                    <ul>
+                                        <li><i class="fas fa-check"></i> Prioridade Máxima</li>
+                                        <li><i class="fas fa-check"></i> 500k em Moeda do Jogo</li>
+                                        <li><i class="fas fa-check"></i> Acesso a Veículos VIP</li>
+                                        <li><i class="fas fa-check"></i> Casa de Alto Padrão</li>
+                                        <li><i class="fas fa-check"></i> Empresa Pequena</li>
+                                    </ul>
+                                </div>
+                                <div class="plano-footer">
+                                    <a href="#" class="btn-primary">COMPRAR AGORA</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="plano-card">
+                                <div class="plano-header">
+                                    <img src="https://i.ibb.co/L95t2t2/plano-basico.png" alt="Plano Magnata">
+                                    <h3>Plano Magnata</h3>
+                                    <div class="plano-price">R$ 99,90</div>
+                                </div>
+                                <div class="plano-body">
+                                    <ul>
+                                        <li><i class="fas fa-check"></i> Prioridade Absoluta</li>
+                                        <li><i class="fas fa-check"></i> 1M em Moeda do Jogo</li>
+                                        <li><i class="fas fa-check"></i> Acesso a Mansões Exclusivas</li>
+                                        <li><i class="fas fa-check"></i> 3 Veículos de Luxo</li>
+                                        <li><i class="fas fa-check"></i> Empresa Grande</li>
+                                        <li><i class="fas fa-check"></i> Suporte Prioritário 24/7</li>
+                                    </ul>
+                                </div>
+                                <div class="plano-footer">
+                                    <a href="#" class="btn-primary">COMPRAR AGORA</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="swiper-slide">
-                        <div class="plano-card">
-                            <div class="plano-header"><img src="https://i.ibb.co/L95t2t2/plano-basico.png" alt="Plano VIP"><h3>Plano VIP</h3></div>
-                            <div class="plano-body"><ul><li>Prioridade na Fila</li><li>250k em Moeda do Jogo</li><li>Kit de Boas-vindas Aprimorado</li></ul></div>
-                            <a href="#" class="btn-primary">COMPRAR</a>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+
+                <a href="pagina-de-planos.html" class="btn-outline btn-ver-todos">VER TODOS OS PLANOS</a>
+            </div>
+        </section>
+
+        <!-- Notícias Section -->
+        <section id="noticias" class="fade-up">
+            <div class="container">
+                <h2>Últimas Notícias</h2>
+                <p class="section-subtitle">Fique por dentro das novidades do Monaco RP</p>
+                
+                <div class="news-container">
+                    <div class="news-item">
+                        <div class="news-image">
+                            <img src="img/news1.jpg" alt="Nova Atualização">
+                            <div class="news-date">15 MAI 2025</div>
+                        </div>
+                        <div class="news-content">
+                            <h3>Nova Atualização: Sistema de Empresas</h3>
+                            <p>Introduzimos um sistema completo de empresas para você gerenciar seus negócios no Monaco RP.</p>
+                            <a href="#" class="news-link">Ler mais <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
-                    <div class="swiper-slide">
-                        <div class="plano-card">
-                            <div class="plano-header"><img src="https://i.ibb.co/L95t2t2/plano-basico.png" alt="Plano Premium"><h3>Plano Premium</h3></div>
-                            <div class="plano-body"><ul><li>Prioridade Máxima</li><li>500k em Moeda do Jogo</li><li>Acesso a Veículos VIP</li></ul></div>
-                            <a href="#" class="btn-primary">COMPRAR</a>
+                    
+                    <div class="news-item">
+                        <div class="news-image">
+                            <img src="img/news2.jpg" alt="Evento Especial">
+                            <div class="news-date">10 MAI 2025</div>
+                        </div>
+                        <div class="news-content">
+                            <h3>Evento de Corridas: Premiação em Dinheiro</h3>
+                            <p>Participe do nosso evento especial de corridas com premiação em dinheiro real do jogo.</p>
+                            <a href="#" class="news-link">Ler mais <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
-                    <div class="swiper-slide">
-                        <div class="plano-card">
-                            <div class="plano-header"><img src="https://i.ibb.co/L95t2t2/plano-basico.png" alt="Plano Magnata"><h3>Plano Magnata</h3></div>
-                            <div class="plano-body"><ul><li>Prioridade Absoluta</li><li>1M em Moeda do Jogo</li><li>Acesso a Mansões Exclusivas</li></ul></div>
-                            <a href="#" class="btn-primary">COMPRAR</a>
+                    
+                    <div class="news-item">
+                        <div class="news-image">
+                            <img src="img/news3.jpg" alt="Novo Veículo">
+                            <div class="news-date">05 MAI 2025</div>
+                        </div>
+                        <div class="news-content">
+                            <h3>Novos Veículos Exclusivos Adicionados</h3>
+                            <p>Adicionamos 5 novos veículos exclusivos disponíveis para todos os jogadores.</p>
+                            <a href="#" class="news-link">Ler mais <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
+                
+                <a href="#" class="btn-outline">VER TODAS AS NOTÍCIAS</a>
             </div>
-
-            <a href="pagina-de-planos.html" class="btn-outline btn-ver-todos">VER TODOS OS PLANOS</a>
         </section>
 
-        <section id="noticias" class="fade-up">
-            <h2>Notícias</h2>
-            </section>
-
+        <!-- Galeria Section -->
         <section id="galeria" class="fade-up">
-            <h2>Galeria de Ostentação</h2>
-            </section>
+            <div class="container">
+                <h2>Galeria de Ostentação</h2>
+                <p class="section-subtitle">Veja o que nossos jogadores estão fazendo no servidor</p>
+                
+                <div class="gallery-filters">
+                    <button class="filter-btn active" data-filter="all">Tudo</button>
+                    <button class="filter-btn" data-filter="vehicles">Veículos</button>
+                    <button class="filter-btn" data-filter="properties">Propriedades</button>
+                    <button class="filter-btn" data-filter="events">Eventos</button>
+                </div>
+                
+                <div class="galeria-grid">
+                    <div class="galeria-item" data-category="vehicles">
+                        <img src="img/gallery1.jpg" alt="Supercarro no Monaco RP">
+                        <div class="gallery-overlay">
+                            <h3>Supercarro Exclusivo</h3>
+                            <p>Veículo disponível no Plano Magnata</p>
+                        </div>
+                    </div>
+                    
+                    <div class="galeria-item" data-category="properties">
+                        <img src="img/gallery2.jpg" alt="Mansão de Luxo">
+                        <div class="gallery-overlay">
+                            <h3>Mansão de Luxo</h3>
+                            <p>Interior personalizável</p>
+                        </div>
+                    </div>
+                    
+                    <div class="galeria-item" data-category="events">
+                        <img src="img/gallery3.jpg" alt="Evento de Corrida">
+                        <div class="gallery-overlay">
+                            <h3>Campeonato de Corridas</h3>
+                            <p>Evento mensal com premiações</p>
+                        </div>
+                    </div>
+                    
+                    <div class="galeria-item" data-category="vehicles">
+                        <img src="img/gallery4.jpg" alt="Helicóptero">
+                        <div class="gallery-overlay">
+                            <h3>Helicóptero Executivo</h3>
+                            <p>Deslocamento rápido pela cidade</p>
+                        </div>
+                    </div>
+                    
+                    <div class="galeria-item" data-category="properties">
+                        <img src="img/gallery5.jpg" alt="Iate de Luxo">
+                        <div class="gallery-overlay">
+                            <h3>Iate de Luxo</h3>
+                            <p>Disponível no Plano Premium</p>
+                        </div>
+                    </div>
+                    
+                    <div class="galeria-item" data-category="events">
+                        <img src="img/gallery6.jpg" alt="Festa na Praia">
+                        <div class="gallery-overlay">
+                            <h3>Festa na Praia</h3>
+                            <p>Evento social semanal</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
+        <!-- Como Jogar Section -->
         <section id="como-jogar" class="fade-up">
-            <h2>Como Jogar</h2>
-            </section>
+            <div class="container">
+                <h2>Como Jogar</h2>
+                <p class="section-subtitle">Siga estes passos simples para começar sua aventura no Monaco RP</p>
+                
+                <div class="steps-container">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Baixe e Instale o FiveM</h3>
+                            <p>Faça o download do FiveM, o cliente modificado para GTA V que permite jogar em servidores de RP.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Entre no Nosso Discord</h3>
+                            <p>Junte-se à nossa comunidade no Discord para se manter atualizado e interagir com outros jogadores.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Crie Seu Personagem</h3>
+                            <p>Use nosso sistema de criação de personagens para dar vida à sua identidade no Monaco RP.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>Comece Sua Jornada</h3>
+                            <p>Explore a cidade, faça amigos, participe de eventos e construa sua história no servidor.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="download-buttons">
+                    <a href="#" class="btn-primary"><i class="fas fa-download"></i> BAIXAR FIVEM</a>
+                    <a href="https://discord.gg" target="_blank" class="btn-discord">
+                        <i class="fab fa-discord"></i> ENTRAR NO DISCORD
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="fade-up">
+            <div class="container">
+                <h2>Perguntas Frequentes</h2>
+                <p class="section-subtitle">Tire suas dúvidas sobre o Monaco RP</p>
+                
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            Preciso ter o GTA V original para jogar?
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Sim, é necessário ter uma cópia legítima do GTA V para jogar no Monaco RP através do FiveM.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            Como obtenho vantagens no servidor?
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Você pode adquirir um de nossos planos VIP que oferecem benefícios exclusivos, ou participar de eventos para ganhar recompensas.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            O servidor é gratuito?
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Sim, o acesso básico ao servidor é completamente gratuito. Os planos VIP oferecem benefícios adicionais para quem deseja aprimorar sua experiência.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            Há suporte para problemas técnicos?
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Sim, temos uma equipe de suporte dedicada para ajudar com problemas técnicos através do nosso Discord.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer id="main-footer"></footer>

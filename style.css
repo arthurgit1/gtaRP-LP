@@ -1,4 +1,8 @@
 /* Paleta de Cores e Estilos Base */
+html {
+    font-size: 16px; /* Tamanho de fonte padrão para desktop */
+}
+
 :root {
     --purple: #6a0dad; /* Roxo para destaque e botões */
     --purple-light: #8a2be2; /* Roxo mais claro para gradientes */
@@ -765,4 +769,42 @@ section:nth-of-type(odd) {
 #rodape p {
     color: var(--light-gray);
     font-size: 0.9rem;
+}
+
+
+/* ========================================= */
+/* === AJUSTES PARA TELAS MENORES (Móvel) === */
+/* ========================================= */
+@media (max-width: 768px) {
+    /* Reduz o tamanho de fonte de todo o site em telas menores */
+    html {
+        font-size: 14px;
+    }
+
+    /* Reduz o tamanho do título principal (Hero) */
+    .hero-content h1 {
+        font-size: 2.5rem; /* ~40px */
+    }
+
+    /* Reduz o tamanho dos títulos das seções */
+    h2 {
+        font-size: 2rem; /* ~32px */
+    }
+    
+    /* Ajusta o tamanho e a altura da linha dos parágrafos */
+    p.section-subtitle,
+    p {
+        font-size: 1rem; /* ~16px */
+        line-height: 1.5;
+    }
+    
+    /* Adiciona margem entre as seções para melhor espaçamento */
+    section {
+        padding-bottom: 50px;
+    }
+
+    /* Oculta elementos que não são essenciais em telas pequenas */
+    .scroll-indicator {
+        display: none;
+    }
 }

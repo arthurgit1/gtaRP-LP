@@ -3,12 +3,25 @@ html {
     font-size: 16px; /* Tamanho de fonte padrão para desktop */
 }
 
+section {
+    padding: 80px 0;
+    position: relative;
+    /* Define o fundo padrão para roxo escuro */
+    background-color: var(--dark-purple-bg);
+}
+
+/* Aplica o roxo escuro nas seções ímpares, criando o contraste */
+section:nth-of-type(odd) {
+    background-color: var(--black);
+}
+
 :root {
     --purple: #8a2be2; /* Roxo */
     --gold: #FFD700; /* Dourado */
-    --black: #1a1a1a; /* Preto */
+    --black: #000000; /* Preto */
     --white: #f5f5f5; /* Branco */
-    
+    --dark-purple-bg: #12002e; /* Roxo escuro */
+
     --border-radius: 12px;
     --transition-speed: 0.3s;
 }
@@ -328,6 +341,21 @@ section:nth-of-type(odd) {
     transform: translateY(-10px);
     box-shadow: 0 15px 40px rgba(138, 43, 226, 0.3);
     border-color: var(--purple);
+}
+
+.plano-card, .item-card {
+    background-color: #222;
+    border: 2px solid transparent;
+    border-radius: 15px;
+    padding: 30px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.plano-card:hover, .item-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--purple);
+    box-shadow: 0 15px 40px rgba(255, 193, 7, 0.4);
 }
 
 .plano-popular {

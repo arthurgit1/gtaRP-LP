@@ -16,10 +16,10 @@ section:nth-of-type(odd) {
 }
 
 :root {
-    --purple: #8a2be2; /* Roxo */
+    --purple: #550b9b; /* Roxo */
     --gold: #FFD700; /* Dourado */
     --black: #000000; /* Preto */
-    --white: #f5f5f5; /* Branco */
+    --white: #ffffff; /* Branco */
     --dark-purple-bg: #12002e; /* Roxo escuro */
 
     --border-radius: 12px;

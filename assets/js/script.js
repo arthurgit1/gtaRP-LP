@@ -120,11 +120,88 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // ===================================
-    //  Inicializar Swiper.js (na página inicial)
+    //  Loja: Filtros e Slider
+    // ===================================
+
+    const mainFilterButtons = document.querySelectorAll('.loja-filters .filter-btn');
+    const subFilterContainers = document.querySelectorAll('.sub-filter-container');
+    const lojaItems = document.querySelectorAll('.itens-container .item-card');
+    
+    function applyLojaFilter(mainFilter, subFilter = 'all') {
+        lojaItems.forEach(item => {
+            const itemMainCategory = item.getAttribute('data-main-category');
+            const itemSubcategory = item.getAttribute('data-subcategory');
+    
+            const isVisibleByMain = (mainFilter === 'all' || itemMainCategory === mainFilter);
+            const isVisibleBySub = (subFilter === 'all' || itemSubcategory === subFilter);
+    
+            if (isVisibleByMain && isVisibleBySub) {
+                item.classList.remove('hidden');
+            } else {
+                item.classList.add('hidden');
+            }
+        });
+    }
+    
+    mainFilterButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            mainFilterButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+    
+            subFilterContainers.forEach(container => container.classList.remove('active'));
+    
+            const mainFilter = btn.getAttribute('data-main-filter');
+            
+            if (mainFilter !== 'all') {
+                const targetContainer = document.querySelector(`.sub-filter-container[data-parent-category="${mainFilter}"]`);
+                if (targetContainer) {
+                    targetContainer.classList.add('active');
+                    targetContainer.querySelectorAll('.filter-btn').forEach(subBtn => subBtn.classList.remove('active'));
+                    targetContainer.querySelector('[data-sub-filter="all"]').classList.add('active');
+                }
+            }
+    
+            applyLojaFilter(mainFilter);
+        });
+    });
+    
+    subFilterContainers.forEach(container => {
+        container.querySelectorAll('.filter-btn').forEach(subBtn => {
+            subBtn.addEventListener('click', () => {
+                container.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                subBtn.classList.add('active');
+    
+                const mainFilter = container.getAttribute('data-parent-category');
+                const subFilter = subBtn.getAttribute('data-sub-filter');
+                
+                applyLojaFilter(mainFilter, subFilter);
+            });
+        });
+    });
+
+    // Botão Detalhes
+    const detailsButtons = document.querySelectorAll('.btn-details');
+
+    detailsButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const itemCard = button.closest('.item-card');
+            const itemDetails = itemCard.querySelector('.item-details');
+            itemDetails.classList.toggle('show');
+
+            if (itemDetails.classList.contains('show')) {
+                button.textContent = 'ESCONDER';
+            } else {
+                button.textContent = 'DETALHES';
+            }
+        });
+    });
+    
+    // ===================================
+    //  Inicializar Swiper.js
     // ===================================
     if (document.querySelector('.planos-slider')) {
         const planosSwiper = new Swiper('.planos-slider', {
-            loop: true,
+            loop: true, 
             slidesPerView: 1,
             spaceBetween: 20,
             navigation: {
@@ -144,27 +221,17 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ===================================
-    //  Filtros da Loja (Atualizado)
-    // ===================================
-    const lojaFilterButtons = document.querySelectorAll('.loja-filters .filter-btn');
-    const lojaItems = document.querySelectorAll('.itens-container .item-card');
-
-    lojaFilterButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            lojaFilterButtons.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-
-            const filter = btn.getAttribute('data-filter');
-
-            lojaItems.forEach(item => {
-                if (filter === 'all' || item.getAttribute('data-category') === filter) {
-                    item.classList.remove('hidden');
-                } else {
-                    item.classList.add('hidden');
-                }
-            });
+    if (document.querySelector('.loja-main-filters-slider')) {
+        const mainFiltersSwiper = new Swiper('.loja-main-filters-slider', {
+            slidesPerView: 'auto',
+            spaceBetween: 10,
+            freeMode: true,
+            loop: false, 
+            navigation: {
+                // Seletores atualizados para corresponder ao novo HTML
+                nextEl: '.loja-filtros-container .swiper-button-next',
+                prevEl: '.loja-filtros-container .swiper-button-prev',
+            },
         });
-    });
-
+    }
 });

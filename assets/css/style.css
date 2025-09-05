@@ -946,3 +946,46 @@ section:nth-of-type(odd) {
         grid-template-columns: repeat(1, 1fr);
     }
 }
+
+/* Estilos para o botão de detalhes e container de botões */
+.item-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.item-buttons .btn-primary,
+.item-buttons .btn-secondary {
+    flex: 1;
+    text-align: center;
+}
+
+.item-buttons .btn-secondary {
+    background: transparent;
+    border: 1px solid var(--btn-primary-bg);
+    color: var(--btn-primary-bg);
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.item-buttons .btn-secondary:hover {
+    background: var(--btn-primary-bg);
+    color: #fff;
+}
+
+/* Esconde e anima a área de detalhes */
+.item-details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out, margin-top 0.3s;
+    opacity: 0;
+}
+
+.item-details.show {
+    max-height: 300px; /* Valor grande o suficiente para o conteúdo */
+    margin-top: 10px;
+    opacity: 1;
+}

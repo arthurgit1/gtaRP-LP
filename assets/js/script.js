@@ -99,12 +99,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // ===================================
     //  Galeria (Filtros)
     // ===================================
-    const filterButtons = document.querySelectorAll('.filter-btn');
+    const galleryFilterButtons = document.querySelectorAll('#galeria .filter-btn');
     const galleryItems = document.querySelectorAll('.galeria-item');
 
-    filterButtons.forEach(btn => {
+    galleryFilterButtons.forEach(btn => {
         btn.addEventListener('click', () => {
-            filterButtons.forEach(b => b.classList.remove('active'));
+            galleryFilterButtons.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
 
             const filter = btn.getAttribute('data-filter');
@@ -118,28 +118,53 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     });
+    
+    // ===================================
+    //  Inicializar Swiper.js (na página inicial)
+    // ===================================
+    if (document.querySelector('.planos-slider')) {
+        const planosSwiper = new Swiper('.planos-slider', {
+            loop: true,
+            slidesPerView: 1,
+            spaceBetween: 20,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 30,
+                },
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 40,
+                },
+            },
+        });
+    }
 
     // ===================================
-    //  Inicializar Swiper.js
+    //  Filtros da Loja (Atualizado)
     // ===================================
-    const planosSwiper = new Swiper('.planos-slider', {
-        loop: true,
-        slidesPerView: 1,
-        spaceBetween: 20,
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-        breakpoints: {
-            768: {
-                slidesPerView: 2,
-                spaceBetween: 30,
-            },
-            1024: {
-                slidesPerView: 3,
-                spaceBetween: 40,
-            },
-        },
+    const lojaFilterButtons = document.querySelectorAll('.loja-filters .filter-btn');
+    const lojaItems = document.querySelectorAll('.itens-container .item-card');
+
+    lojaFilterButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            lojaFilterButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const filter = btn.getAttribute('data-filter');
+
+            lojaItems.forEach(item => {
+                if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                    item.classList.remove('hidden');
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+        });
     });
 
 });

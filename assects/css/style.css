@@ -99,7 +99,7 @@ h2 {
     text-align: center;
     overflow: hidden;
     /* Adicione as seguintes linhas */
-    background-image: url('img/bg-principal-1.jpg');
+    background-image: url('../img/bg-principal-1.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed; /* Efeito Parallax */

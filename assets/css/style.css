@@ -98,7 +98,7 @@ h2 {
     align-items: center;
     text-align: center;
     overflow: hidden;
-    /* Adicione as seguintes linhas */
+    /* Caminho atualizado da imagem de fundo */
     background-image: url('../img/bg-principal-1.jpg');
     background-size: cover;
     background-position: center;
@@ -391,6 +391,7 @@ section:nth-of-type(odd) {
     font-weight: bold;
     color: var(--gold);
     margin-bottom: 20px;
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.7);
 }
 
 .plano-body ul {
@@ -421,7 +422,7 @@ section:nth-of-type(odd) {
     background-color: #222;
     border-radius: var(--border-radius);
     overflow: hidden;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     display: flex;
     flex-direction: column;
@@ -674,11 +675,9 @@ section:nth-of-type(odd) {
     width: 100%;
     padding: 20px 0;
     z-index: 1000;
-    background-color: transparent;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
     transition: background-color 0.3s ease;
-
+    
+    /* PROPRIEDADES CORRIGIDAS: Removido o código duplicado */
     background-color: rgba(0, 0, 0, 0.5); 
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px); 

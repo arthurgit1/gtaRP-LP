@@ -145,7 +145,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // ===================================
-    //  Filtros da Loja (Atualizado)
+    //  Filtros da Loja
     // ===================================
     const lojaFilterButtons = document.querySelectorAll('.loja-filters .filter-btn');
     const lojaItems = document.querySelectorAll('.itens-container .item-card');
@@ -164,6 +164,25 @@ document.addEventListener('DOMContentLoaded', function() {
                     item.classList.add('hidden');
                 }
             });
+        });
+    });
+
+    // ===================================
+    //  NOVO: Botão Detalhes
+    // ===================================
+    const detailsButtons = document.querySelectorAll('.btn-details');
+
+    detailsButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const itemCard = button.closest('.item-card');
+            const itemDetails = itemCard.querySelector('.item-details');
+            itemDetails.classList.toggle('show');
+
+            if (itemDetails.classList.contains('show')) {
+                button.textContent = 'ESCONDER';
+            } else {
+                button.textContent = 'DETALHES';
+            }
         });
     });
 

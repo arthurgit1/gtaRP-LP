@@ -1,4 +1,4 @@
-export const loadFooter = () => {
+export function loadFooter() {
     const footerPlaceholder = document.getElementById('main-footer');
     if (footerPlaceholder) {
         fetch('_partials/footer.html')
@@ -8,4 +8,4 @@ export const loadFooter = () => {
             })
             .catch(error => console.error('Erro ao carregar o footer:', error));
     }
-};
+}

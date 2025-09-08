@@ -562,11 +562,10 @@ section:nth-of-type(odd) {
 /* === 13. RODAPÉ (FOOTER) === */
 /* ========================================================= */
 #main-footer {
-    background-color: var(--black);  /* Cor de fundo preta */
-    border-top: 2px solid var(--purple);  /* Linha superior roxa */
-    padding: 40px 0;  /* Espaçamento no topo e no fundo do rodapé */
+    padding: 40px 0;
+    background-color: var(--black);
     text-align: center;
-    color: var(--white);  /* Cor do texto branca */
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 #main-footer .social-media {
@@ -585,9 +584,8 @@ section:nth-of-type(odd) {
 }
 
 #main-footer p {
-    font-size: 1rem;  /* Tamanho da fonte do texto */
-    color: var(--white);  /* Cor do texto */
-    margin-top: 10px;  /* Espaçamento superior */
+    color: var(--white);
+    font-size: 1rem;
 }
 
 /* Responsividade para telas menores (Celulares/Tablets) */
@@ -802,4 +800,301 @@ section:nth-of-type(odd) {
         font-size: 1rem;  /* Ajuste no tamanho da fonte das respostas */
         padding: 15px;  /* Ajuste no espaçamento das respostas */
     }
+}
+
+/* ========================================================= */
+/* === 3. SEÇÃO LOJA === */
+/* ========================================================= */
+
+/* Container principal de filtros */
+.loja-filtros-container {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px 0;
+}
+
+/* Swiper container */
+.swiper {
+    width: 100%;
+}
+
+.loja-filters {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.filter-btn {
+    background-color: transparent;
+    color: var(--white);
+    border: 2px solid var(--gold);
+    padding: 12px 25px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background-color: var(--gold);
+    color: var(--black);
+    box-shadow: 0 0 10px var(--gold);
+}
+
+.filter-btn .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--black);
+    border-radius: 8px;
+    border: 2px solid var(--gold);
+    z-index: 1;
+    width: 100%;
+}
+
+.filter-btn:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content .filter-btn {
+    padding: 12px;
+    background-color: transparent;
+    color: var(--white);
+    border: none;
+    width: 100%;
+    text-align: left;
+}
+
+.dropdown-content .filter-btn:hover {
+    background-color: var(--gold);
+    color: var(--black);
+}
+
+/* Estilo para subfiltros */
+.sub-filter-container {
+    flex: 1 1 200px;
+    border: 1px solid var(--gold);
+    padding: 20px;
+    border-radius: 10px;
+    background-color: var(--black);
+}
+
+.sub-filter-container button {
+    display: block;
+    width: 100%;
+    background-color: transparent;
+    color: var(--white);
+    border: 2px solid var(--gold);
+    padding: 12px;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.sub-filter-container button:hover {
+    background-color: var(--gold);
+    color: var(--black);
+}
+
+/* Ajustes responsivos para filtros */
+@media (max-width: 768px) {
+    .loja-filtros-container {
+        flex-direction: column;
+    }
+
+    .sub-filter-container {
+        flex: 1 1 100%;
+    }
+}
+
+/* ========================================================= */
+/* === 4. GRID DE ITENS DA LOJA === */
+/* ========================================================= */
+.itens-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas em telas grandes */
+    gap: 30px;
+    margin-top: 40px;
+}
+
+/* Cartões dos itens */
+.item-card {
+    background-color: #222;
+    border: 2px solid transparent;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.item-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);
+}
+
+.item-image img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    object-fit: cover;
+}
+
+.item-content h3 {
+    font-size: 1.5rem;
+    color: var(--gold);
+}
+
+.item-price {
+    font-size: 1.8rem;
+    color: var(--gold);
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.item-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.btn-primary {
+    background-color: var(--purple);
+    color: var(--white);
+    border-radius: 25px;
+    padding: 12px 20px;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--gold);
+    color: var(--black);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 2px solid var(--gold);
+    color: var(--gold);
+    border-radius: 25px;
+    padding: 12px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: var(--gold);
+    color: var(--black);
+}
+
+/* ========================================================= */
+/* === 5. RESPONSIVIDADE === */
+/* ========================================================= */
+
+/* Responsividade para telas grandes (Desktops) */
+@media (max-width: 1200px) {
+    .itens-container {
+        grid-template-columns: repeat(2, 1fr); /* Exibe 2 colunas em telas médias */
+    }
+
+    .planos-slider {
+        width: 80%;
+    }
+}
+
+/* Responsividade para telas médias (Tablets) */
+@media (max-width: 768px) {
+    .itens-container {
+        grid-template-columns: 1fr; /* Exibe 1 item por vez em telas pequenas */
+    }
+
+    .swiper-button-next, .swiper-button-prev {
+        font-size: 16px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .planos-slider {
+        width: 100%;
+    }
+}
+
+/* Responsividade para telas muito pequenas (Celulares) */
+@media (max-width: 576px) {
+    .itens-container {
+        grid-template-columns: 1fr; /* Exibe 1 item por vez em dispositivos móveis */
+    }
+
+    .botoes-container-align {
+        text-align: center;
+    }
+
+    .swiper-button-next, .swiper-button-prev {
+        font-size: 14px;
+    }
+}
+
+/* ========================================================= */
+/* === 6. RODAPÉ === */
+/* ========================================================= */
+#main-footer {
+    padding: 40px 0;
+    background-color: var(--black);
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#main-footer .social-media {
+    margin-bottom: 20px;
+}
+
+#main-footer p {
+    color: var(--white);
+    font-size: 1rem;
+}
+
+/* Subcategorias inicialmente ocultas */
+.sub-filter-container {
+    display: none; /* Oculta as subcategorias por padrão */
+}
+
+.sub-filter-container.active {
+    display: block; /* Exibe quando o filtro relevante for aplicado */
+}
+
+.sub-filter-container button {
+    display: block;
+    width: 100%;
+    background-color: transparent;
+    color: var(--white);
+    border: 2px solid var(--gold);
+    padding: 12px;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.sub-filter-container button:hover {
+    background-color: var(--gold);
+    color: var(--black);
 }

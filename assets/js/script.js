@@ -27,8 +27,8 @@ document.addEventListener('DOMContentLoaded', function() {
 // Inicializar o Swiper para os planos
 if (document.querySelector('.planos-slider')) {
     const planosSwiper = new Swiper('.planos-slider', {
-        loop: true,
-        slidesPerView: 1,
+        loop: true, 
+        slidesPerView: 1, 
         spaceBetween: 20,
         navigation: {
             nextEl: '.swiper-button-next',
@@ -36,11 +36,11 @@ if (document.querySelector('.planos-slider')) {
         },
         breakpoints: {
             768: {
-                slidesPerView: 2,
+                slidesPerView: 2, // 2 planos por vez em telas médias
                 spaceBetween: 30,
             },
             1024: {
-                slidesPerView: 3,
+                slidesPerView: 3, // 3 planos por vez em telas grandes
                 spaceBetween: 40,
             },
         },

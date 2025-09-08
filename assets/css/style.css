@@ -62,94 +62,34 @@ section:nth-of-type(odd) {
     background-color: var(--black);
 }
 
-/* Seções de destaque, como Hero */
-.hero {
-    padding: 120px 0; /* Aumenta o espaçamento no topo e fundo da seção Hero */
-    text-align: center;
-}
-
-.section-subtitle {
-    text-align: center;
-    margin-bottom: 40px;
-    color: var(--white);
-    font-size: 1.1rem;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px; /* Ajuste o padding para garantir que o conteúdo não fique colado nas bordas */
-}
-
-/* Ajustando o espaçamento do cabeçalho (header) */
-#main-header {
-    padding: 20px 0;
-}
-
 /* ========================================================= */
-/* === 3. UTILITÁRIOS E ANIMAÇÕES === */
-/* ========================================================= */
-.btn-primary, .btn-discord, .btn-outline {
-    display: inline-block;
-    padding: 15px 30px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.btn-primary {
-    background-color: var(--purple);
-    color: var(--white);
-    border: none;
-    box-shadow: 0 0 20px var(--purple);
-}
-
-.btn-discord {
-    background-color: #5865F2;
-    color: var(--white);
-    border: none;
-}
-
-.btn-outline {
-    background-color: transparent;
-    color: var(--gold);
-    border: 2px solid var(--gold);
-    box-shadow: 0 0 10px var(--gold);
-}
-
-.btn-primary:hover, .btn-discord:hover, .btn-outline:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px var(--purple);
-}
-
-.btn-discord:hover {
-    box-shadow: 0 10px 30px #5865F2;
-}
-
-/* ========================================================= */
-/* === 4. HEADER E NAVEGAÇÃO === */
+/* === 3. HEADER === */
 /* ========================================================= */
 #main-header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 20px 0;
+    padding: 10px 100px 10px 100px; /* Define um padding para não deixar o header muito alto */
+    background-color: rgba(0, 0, 0, 0.7); /* Adiciona um fundo transparente */
+    backdrop-filter: blur(10px); /* Adiciona um efeito de desfocagem no fundo */
     z-index: 1000;
     transition: background-color 0.3s ease;
-    background-color: rgba(0, 0, 0, 0.5); 
-    backdrop-filter: blur(10px);
 }
 
-#main-header.scrolled {
-    background-color: rgba(0, 0, 0, 0.7);
+#main-header .logo img {
+    max-width: 100%; /* Garante que a imagem da logo não ultrapasse o limite do header */
+    height: auto; /* Mantém a proporção original da imagem */
+    max-height: 60px; /* Define uma altura máxima para a logo */
+    object-fit: contain; /* Garante que a imagem será contida no header */
 }
 
+/* Para o conteúdo dentro do header (como logo e menu) */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 20px; /* Define um espaçamento interno */
 }
 
 .logo a {
@@ -161,11 +101,117 @@ section:nth-of-type(odd) {
 }
 
 .menu {
-    list-style: none;
     display: flex;
     gap: 30px;
+    margin: 0;
 }
 
+.menu li a {
+    color: var(--white); /* Cor branca para o texto do menu */
+    text-decoration: none; /* Remove a linha de sublinhado */
+    font-weight: 600; /* Texto em negrito */
+    font-size: 1rem; /* Tamanho da fonte do menu */
+    position: relative;
+    transition: color 0.3s ease; /* Transição suave para efeito de hover */
+    letter-spacing: 1px; /* Espaçamento entre as letras para melhorar a legibilidade */
+}
+
+/* Efeito de hover no menu */
+.menu li a:hover {
+    color: var(--gold); /* Muda a cor para dourado no hover */
+    text-shadow: 0 0 10px var(--gold); /* Efeito de sombra ao passar o mouse */
+}
+
+/* Linha dourada de destaque ao passar o mouse */
+.menu li a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px; /* Posiciona a linha logo abaixo do texto */
+    left: 0;
+    width: 0;
+    height: 2px; /* Define a espessura da linha */
+    background-color: var(--gold); /* Cor dourada da linha */
+    transition: width 0.3s ease; /* Transição suave na largura da linha */
+}
+
+/* Expande a linha ao passar o mouse */
+.menu li a:hover::after {
+    width: 100%; /* Expande a linha para o tamanho do texto */
+}
+
+/* Ajuste de responsividade para o menu hambúrguer em telas pequenas */
+@media (max-width: 768px) {
+    .menu {
+        display: none; /* Esconde o menu no celular (será ativado pelo menu hambúrguer) */
+        flex-direction: column; /* Torna os itens do menu empilhados */
+        gap: 10px; /* Menos espaço entre os itens */
+    }
+
+    .hamburger {
+        display: block; /* Exibe o ícone de menu hambúrguer */
+        font-size: 1.8rem;
+        color: var(--white);
+        background: none;
+        border: none;
+    }
+
+    .hamburger i {
+        font-size: 2rem;
+        color: var(--white);
+    }
+    
+    /* Exibe o menu quando a classe 'active' for adicionada */
+    .menu.active {
+        display: flex;
+    }
+}
+
+/* Esconde o hambúrguer em telas grandes (desktop) */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* Exibe o hambúrguer em telas pequenas (celulares e tablets) */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block; /* Exibe o hambúrguer em telas pequenas */
+    }
+    .menu {
+        display: none; /* Esconde o menu em telas pequenas */
+        flex-direction: column; /* Torna o menu vertical em dispositivos móveis */
+        align-items: center;
+        gap: 15px;
+        background-color: var(--black); /* Fundo preto para o menu */
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        z-index: 9999;
+    }
+    .menu.active {
+        display: flex; /* Exibe o menu quando a classe 'active' for adicionada */
+    }
+}
+
+/* Para o conteúdo dentro do header (como logo e menu) */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px; /* Define um espaçamento interno */
+}
+
+.menu {
+    display: flex;
+    gap: 30px; /* Espaçamento entre os itens do menu */
+}
+
+/* Para os links do menu */
 .menu li a {
     color: var(--white);
     text-decoration: none;
@@ -173,6 +219,13 @@ section:nth-of-type(odd) {
     font-size: 1rem;
     position: relative;
     transition: color 0.3s ease;
+    letter-spacing: 1px;
+}
+
+/* Efeito de hover no menu */
+.menu li a:hover {
+    color: var(--gold);
+    text-shadow: 0 0 10px var(--gold); 
 }
 
 .menu li a::after {
@@ -191,12 +244,12 @@ section:nth-of-type(odd) {
 }
 
 /* ========================================================= */
-/* === 5. SEÇÃO HERO === */
+/* === 4. SEÇÃO HERO === */
 /* ========================================================= */
 .hero {
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -206,31 +259,25 @@ section:nth-of-type(odd) {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-}
-
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
 }
 
 .hero-content {
     position: relative;
     z-index: 3;
+    padding: 50px 20px;
 }
 
-.hero-content h1, .hero-content p {
+.hero-content h1 {
+    font-size: 2.5rem;
+    color: var(--white);
     text-shadow: 0 0 15px var(--purple);
 }
 
 .hero-content p {
     font-size: 1.2rem;
-    margin-bottom: 30px;
     color: var(--white);
+    margin-top: 15px;
 }
 
 .hero-buttons {
@@ -239,64 +286,9 @@ section:nth-of-type(odd) {
     gap: 20px;
 }
 
-.server-stats {
-    display: flex;
-    justify-content: center;
-    gap: 50px;
-    margin-top: 50px;
-}
-
-.stat {
-    text-align: center;
-}
-
-.stat-number {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--gold);
-}
-
-.stat-label {
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    color: var(--white);
-    display: block;
-}
-
-.scroll-indicator {
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.scroll-arrow {
-    width: 25px;
-    height: 25px;
-    border-right: 4px solid var(--purple);
-    border-bottom: 4px solid var(--purple);
-    transform: rotate(45deg);
-    margin-top: 10px;
-    animation: bounce 2s infinite;
-}
-
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0) rotate(45deg);
-    }
-    40% {
-        transform: translateY(-10px) rotate(45deg);
-    }
-    60% {
-        transform: translateY(-5px) rotate(45deg);
-    }
-}
 
 /* ========================================================= */
-/* === 6. SEÇÃO STARTER PACK === */
+/* === 5. SEÇÃO STARTER PACK === */
 /* ========================================================= */
 .starter-content {
     display: flex;
@@ -340,7 +332,9 @@ section:nth-of-type(odd) {
     margin-right: 10px;
 }
 
-/* Seção de Planos */
+/* ========================================================= */
+/* === 6. SEÇÃO PLANOS === */
+/* ========================================================= */
 .planos-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* Exibe 3 colunas em telas grandes */
@@ -392,11 +386,6 @@ section:nth-of-type(odd) {
     text-transform: uppercase;
 }
 
-.plano-header img {
-    height: 150px;
-    margin-bottom: 15px;
-}
-
 .plano-header h3 {
     font-size: 1.5rem;
     margin-bottom: 5px;
@@ -427,7 +416,7 @@ section:nth-of-type(odd) {
 }
 
 /* ========================================================= */
-/* === 8. SEÇÃO LOJA === */
+/* === 7. SEÇÃO LOJA === */
 /* ========================================================= */
 .itens-container {
     display: grid;
@@ -452,6 +441,7 @@ section:nth-of-type(odd) {
     box-shadow: 0 0 25px rgba(138, 43, 226, 0.5);
     border-color: var(--gold);
 }
+
 .item-image {
     height: 250px;
     overflow: hidden;
@@ -496,7 +486,9 @@ section:nth-of-type(odd) {
     text-shadow: 0 0 5px rgba(255, 215, 0, 0.7);
 }
 
-/* Seção de Galeria */
+/* ========================================================= */
+/* === 8. SEÇÃO GALERIA === */
+/* ========================================================= */
 .galeria-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 colunas em telas grandes */
@@ -541,117 +533,98 @@ section:nth-of-type(odd) {
     color: var(--white);
 }
 
-/* Responsividade para telas grandes (Desktops) */
-@media (max-width: 1200px) {
-    .itens-container {
-        grid-template-columns: repeat(2, 1fr); /* Exibe 2 colunas em telas médias */
-    }
-
-    .planos-slider {
-        width: 80%;
-    }
+/* ========================================================= */
+/* === 13. RODAPÉ (FOOTER) === */
+/* ========================================================= */
+#main-footer {
+    background-color: var(--black);  /* Cor de fundo preta */
+    border-top: 2px solid var(--purple);  /* Linha superior roxa */
+    padding: 40px 0;  /* Espaçamento no topo e no fundo do rodapé */
+    text-align: center;
+    color: var(--white);  /* Cor do texto branca */
 }
 
-/* Responsividade para telas médias (Tablets) */
+#main-footer .social-media {
+    margin-bottom: 20px;  /* Espaço abaixo dos ícones sociais */
+}
+
+#main-footer .social-media a {
+    color: var(--white);  /* Cor dos ícones sociais */
+    font-size: 2rem;  /* Tamanho dos ícones sociais */
+    margin: 0 15px;  /* Espaçamento entre os ícones */
+    transition: color 0.3s ease;  /* Transição suave na mudança de cor */
+}
+
+#main-footer .social-media a:hover {
+    color: var(--gold);  /* Cor dourada ao passar o mouse sobre os ícones */
+}
+
+#main-footer p {
+    font-size: 1rem;  /* Tamanho da fonte do texto */
+    color: var(--white);  /* Cor do texto */
+    margin-top: 10px;  /* Espaçamento superior */
+}
+
+/* Responsividade para telas menores (Celulares/Tablets) */
 @media (max-width: 768px) {
-    html {
-        font-size: 14px;
+    #main-footer {
+        padding: 30px 10px;  /* Menos espaçamento no topo e no fundo para telas pequenas */
     }
 
-    .itens-container {
-        grid-template-columns: 1fr; /* Exibe 1 coluna em telas pequenas */
+    #main-footer .social-media a {
+        font-size: 1.5rem;  /* Reduz o tamanho dos ícones em telas pequenas */
+        margin: 0 10px;  /* Reduz o espaçamento entre os ícones */
     }
 
-    .swiper-button-next, .swiper-button-prev {
-        font-size: 16px;
-    }
-    
-    .hero-content h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .planos-slider {
-        width: 100%;
+    #main-footer p {
+        font-size: 0.9rem;  /* Reduz o tamanho da fonte do texto */
     }
 }
 
-/* Responsividade para telas muito pequenas (Celulares) */
-@media (max-width: 576px) {
-    .itens-container {
-        grid-template-columns: 1fr; /* Exibe 1 coluna em dispositivos móveis */
-    }
+/* ========================================================= */
+/* === 4. BOTÕES === */
+/* ========================================================= */
 
-    .botoes-container-align {
-        text-align: center;
-    }
-
-    .swiper-button-next, .swiper-button-prev {
-        font-size: 14px;
-    }
+.btn-primary, .btn-discord, .btn-outline {
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Responsividade para telas grandes (Desktops) */
-@media (max-width: 1200px) {
-    .planos-container {
-        grid-template-columns: repeat(2, 1fr); /* Exibe 2 colunas em telas médias */
-    }
-
-    .galeria-grid {
-        grid-template-columns: repeat(2, 1fr); /* Exibe 2 colunas na galeria em telas médias */
-    }
+.btn-primary {
+    background-color: var(--purple);
+    color: var(--white);
+    border: none;
+    box-shadow: 0 0 20px var(--purple);
 }
 
-/* Responsividade para telas médias (Tablets) */
-@media (max-width: 768px) {
-    .planos-container {
-        grid-template-columns: 1fr; /* Exibe 1 coluna em telas pequenas */
-    }
-
-    .galeria-grid {
-        grid-template-columns: 1fr; /* Exibe 1 coluna na galeria em telas pequenas */
-    }
-
-    .swiper-button-next, .swiper-button-prev {
-        font-size: 16px;
-    }
-
-    .hero-content h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-        gap: 15px;
-    }
+.btn-primary:hover {
+    background-color: var(--gold);
+    color: var(--black);
+    box-shadow: 0 10px 30px var(--gold);
+    transform: translateY(-5px);
 }
 
-/* Estilo para os botões no final das seções */
-.botoes-container-align {
-    display: flex;
-    justify-content: flex-end; /* Alinha o botão à direita */
-    margin-top: 30px; /* Adiciona um espaçamento acima do botão */
-    margin-bottom: 20px; /* Adiciona um espaçamento abaixo do botão */
+.btn-discord {
+    background-color: #5865F2;
+    color: var(--white);
+    border: none;
 }
 
-/* Botão de "ver todos os itens" */
-/* Botões "Ver Todos" */
+.btn-discord:hover {
+    background-color: #4d4fd1;
+    box-shadow: 0 10px 30px #5865F2;
+    transform: translateY(-5px);
+}
+
 .btn-outline {
     background-color: transparent;
     color: var(--gold);
     border: 2px solid var(--gold);
     box-shadow: 0 0 10px var(--gold);
-    padding: 15px 30px;
-    border-radius: 50px;
-    text-align: center;
-    font-weight: 600;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
-    text-decoration: none;
-    margin-top: 20px; /* Adiciona um espaçamento em cima do botão */
 }
 
 .btn-outline:hover {
@@ -661,55 +634,18 @@ section:nth-of-type(odd) {
     transform: translateY(-5px);
 }
 
-
-.botoes-container-align {
+/* Botões dentro do conteúdo */
+.hero-buttons {
     display: flex;
-    justify-content: flex-end; /* Mantém o botão alinhado à direita */
-    margin-top: 50px; /* Aumenta o espaçamento superior */
-    margin-bottom: 40px; /* Aumenta o espaçamento inferior */
+    justify-content: center;
+    gap: 20px;
 }
 
-/* Ajustes nas imagens dentro das seções */
-.starter-image img,
-.item-image img,
-.galeria-item img {
-    width: 100%;
-    border-radius: var(--border-radius);
-    margin-bottom: 20px; /* Adiciona espaçamento abaixo das imagens */
-}
-
-/* Ajustes no conteúdo das seções */
-.starter-info h3,
-.plano-header h3 {
-    margin-bottom: 20px; /* Aumenta o espaçamento entre o título e o conteúdo abaixo */
-}
-
-.starter-features li,
-.plano-body li {
-    margin-bottom: 15px; /* Dá mais espaço entre os itens da lista */
-}
-
-/* Ajuste de Responsividade */
-@media (max-width: 1200px) {
-    .container {
-        padding: 0 20px;
-    }
-    section {
-        margin-bottom: 50px; /* Reduz o espaçamento entre as seções em telas menores */
-    }
-}
-
+/* Responsividade para os botões nas telas pequenas */
 @media (max-width: 768px) {
-    .hero {
-        padding: 80px 0; /* Diminui o espaçamento superior e inferior da seção Hero em telas médias */
-    }
-
-    .itens-container {
-        grid-template-columns: 1fr; /* Exibe 1 item por vez em telas pequenas */
-    }
-
-    .planos-container {
-        grid-template-columns: 1fr; /* Exibe 1 plano por vez em telas pequenas */
+    .hero-buttons {
+        flex-direction: column;
+        gap: 15px;
     }
 
     .btn-outline {
@@ -717,19 +653,128 @@ section:nth-of-type(odd) {
     }
 }
 
-/* Rodapé */
-#main-footer {
-    padding: 40px 0;
-    background-color: var(--black);
+/* Botões de "Ver Todos" nas seções */
+.botoes-container-align {
+    display: flex;
+    justify-content: flex-end; /* Alinha o botão à direita */
+    margin-top: 30px; /* Adiciona um espaçamento acima do botão */
+    margin-bottom: 20px; /* Adiciona um espaçamento abaixo do botão */
+}
+
+
+/* ========================================================= */
+/* === 7. SEÇÃO FAQ === */
+/* ========================================================= */
+#faq {
+    background-color: var(--black);  /* Fundo preto para a seção FAQ */
+    color: var(--white);  /* Cor do texto branco */
+    padding: 60px 20px;  /* Adiciona espaçamento superior e inferior */
+}
+
+#faq .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#faq h2 {
     text-align: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 2.5rem;
+    color: var(--gold);  /* Cor dourada para o título */
+    margin-bottom: 30px;  /* Espaço abaixo do título */
 }
 
-#main-footer .social-media {
-    margin-bottom: 20px;
-}
-
-#main-footer p {
+#faq p.section-subtitle {
+    text-align: center;
+    font-size: 1.1rem;
     color: var(--white);
+    margin-bottom: 40px;
+}
+
+/* Estilos para o contêiner das perguntas */
+.faq-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;  /* Espaçamento entre as perguntas */
+}
+
+/* Estilos para cada item da FAQ */
+.faq-item {
+    background-color: var(--dark-purple-bg);  /* Fundo roxo escuro para as perguntas */
+    border: 2px solid var(--purple);  /* Borda roxa para destacar */
+    border-radius: var(--border-radius);  /* Bordas arredondadas */
+    overflow: hidden;  /* Esconde o conteúdo extra */
+    transition: box-shadow 0.3s ease;  /* Efeito de sombra ao passar o mouse */
+}
+
+.faq-item:hover {
+    box-shadow: 0 0 15px rgba(255, 193, 7, 0.4);  /* Sombra dourada no hover */
+}
+
+/* Estilos para a pergunta (botão de mostrar/esconder) */
+.faq-question {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    color: var(--white);
+    padding: 20px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;  /* Transição suave para a cor de fundo */
+}
+
+.faq-question:hover {
+    background-color: rgba(138, 43, 226, 0.1);  /* Cor de fundo no hover */
+}
+
+/* Ícone de seta */
+.faq-question i {
+    transition: transform 0.3s ease;  /* Transição suave para o ícone */
+}
+
+/* Rotaciona o ícone quando a resposta está visível */
+.faq-question.active i {
+    transform: rotate(180deg);  /* Gira o ícone ao clicar */
+}
+
+/* Estilos para a resposta (escondida inicialmente) */
+.faq-answer {
+    padding: 0 20px;
+    max-height: 0;  /* Resposta inicialmente oculta */
+    overflow: hidden;  /* Esconde o conteúdo */
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out;  /* Transição suave para expandir */
     font-size: 1rem;
+    line-height: 1.6;
+    color: var(--white);
+}
+
+/* Quando a resposta é visível */
+.faq-answer.active {
+    max-height: 500px;  /* Tamanho máximo quando a resposta é expandida */
+    padding: 20px;  /* Adiciona espaçamento para o conteúdo */
+}
+
+/* Estilo para o ícone do dropdown */
+.faq-question i {
+    font-size: 1.5rem;  /* Tamanho do ícone */
+}
+
+/* Responsividade para telas pequenas (celulares/tablets) */
+@media (max-width: 768px) {
+    #faq h2 {
+        font-size: 2rem;  /* Tamanho da fonte para o título menor em telas pequenas */
+    }
+
+    .faq-question {
+        font-size: 1.1rem;  /* Ajusta o tamanho da fonte das perguntas */
+        padding: 15px;  /* Ajuste no espaçamento */
+    }
+
+    .faq-answer {
+        font-size: 1rem;  /* Ajuste no tamanho da fonte das respostas */
+        padding: 15px;  /* Ajuste no espaçamento das respostas */
+    }
 }

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,147 +9,125 @@
     
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body>
 
+<body>
+    <!-- Cabeçalho Dinâmico -->
     <header id="main-header"></header>
 
     <main>
-        <section id="loja">
-            <div class="container fade-up">
+        <section id="loja" class="fade-up">
+            <div class="container">
                 <h2>Loja do Servidor</h2>
-                <p class="section-subtitle">Confira os itens exclusivos disponíveis na nossa loja.</p>
-                
-                <div class="loja-filtros-container">
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper loja-main-filters-slider">
-                        <div class="swiper-wrapper loja-filters">
-                            <div class="swiper-slide">
-                                <button class="filter-btn active" data-main-filter="all">Todos</button>
-                            </div>
-                            <div class="swiper-slide">
-                                <button class="filter-btn" data-main-filter="vip">VIP</button>
-                            </div>
-                            <div class="swiper-slide">
-                                <button class="filter-btn" data-main-filter="fichas">Fichas</button>
-                            </div>
-                            <div class="swiper-slide">
-                                <button class="filter-btn" data-main-filter="veiculos">Veículos</button>
-                            </div>
-                            <div class="swiper-slide">
-                                <button class="filter-btn" data-main-filter="aeronaves">Aeronaves</button>
-                            </div>
-                            <div class="swiper-slide">
-                                <button class="filter-btn" data-main-filter="garagem">Garagem</button>
-                            </div>
-                            <div class="swiper-slide">
-                                <button class="filter-btn" data-main-filter="economia">Economia</button>
-                            </div>
-                            <div class="swiper-slide">
-                                <button class="filter-btn" data-main-filter="armas">Armas</button>
-                            </div>
-                            <div class="swiper-slide">
-                                <button class="filter-btn" data-main-filter="punicoes">Punições</button>
-                            </div>
-                            <div class="swiper-slide">
-                                <button class="filter-btn" data-main-filter="ilegal">Ilegal</button>
-                            </div>
-                            <div class="swiper-slide">
-                                <button class="filter-btn" data-main-filter="extras">Extras</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-button-next"></div>
+                <!-- Menu de Categorias -->
+                <nav class="loja-categorias-nav">
+                    <ul class="categorias-list">
+                        <li><button class="filter-btn active" data-main-filter="vip">VIP</button></li>
+                        <li><button class="filter-btn" data-main-filter="fichas">FICHAS</button></li>
+                        <li><button class="filter-btn" data-main-filter="veiculos">VEÍCULOS</button></li>
+                        <li><button class="filter-btn" data-main-filter="aeronaves">AERONAVES</button></li>
+                        <li><button class="filter-btn" data-main-filter="garagem">GARAGEM</button></li>
+                        <li><button class="filter-btn" data-main-filter="economia">ECONOMIA</button></li>
+                        <li><button class="filter-btn" data-main-filter="armas">ARMAS</button></li>
+                        <li><button class="filter-btn" data-main-filter="punicoes">PUNIÇÕES</button></li>
+                        <li><button class="filter-btn" data-main-filter="ilegal">ILEGAL</button></li>
+                        <li><button class="filter-btn" data-main-filter="extras">EXTRAS</button></li>
+                    </ul>
+                </nav>
+
+                <!-- Subcategorias -->
+                <div class="loja-subcategorias-nav">
+                    <ul class="subcategorias-list active" data-parent-category="vip">
+                        <li><button class="filter-btn active" data-sub-filter="vip-member">VIP MEMBER</button></li>
+                        <li><button class="filter-btn" data-sub-filter="vip-silver">VIP SILVER</button></li>
+                        <li><button class="filter-btn" data-sub-filter="vip-gold">VIP GOLD</button></li>
+                        <li><button class="filter-btn" data-sub-filter="vip-platinum">VIP PLATINUM</button></li>
+                        <li><button class="filter-btn" data-sub-filter="vip-black">VIP BLACK</button></li>
+                        <li><button class="filter-btn" data-sub-filter="vip-first-royale">VIP FIRST ROYALE</button></li>
+                    </ul>
+                    <ul class="subcategorias-list" data-parent-category="fichas">
+                        <li><button class="filter-btn active" data-sub-filter="5k">5K</button></li>
+                        <li><button class="filter-btn" data-sub-filter="10k">10K</button></li>
+                        <li><button class="filter-btn" data-sub-filter="20k">20K</button></li>
+                        <li><button class="filter-btn" data-sub-filter="50k">50K</button></li>
+                        <li><button class="filter-btn" data-sub-filter="100k">100K</button></li>
+                    </ul>
+                    <ul class="subcategorias-list" data-parent-category="veiculos">
+                        <li><button class="filter-btn active" data-sub-filter="carros-start">Carros Start</button></li>
+                        <li><button class="filter-btn" data-sub-filter="carros-vip">Carros Vip</button></li>
+                        <li><button class="filter-btn" data-sub-filter="carros-exclusivos">Carros Exclusivos</button></li>
+                        <li><button class="filter-btn" data-sub-filter="carros-blindados">Carros Blindados</button></li>
+                        <li><button class="filter-btn" data-sub-filter="caminhoes-vans">Caminhões e Vans</button></li>
+                        <li><button class="filter-btn" data-sub-filter="motos">Motos</button></li>
+                    </ul>
+                    <ul class="subcategorias-list" data-parent-category="aeronaves">
+                        <li><button class="filter-btn active" data-sub-filter="helicopteros">Helicopteros</button></li>
+                        <li><button class="filter-btn" data-sub-filter="jatos">Jatos</button></li>
+                    </ul>
+                    <ul class="subcategorias-list" data-parent-category="garagem">
+                        <li><button class="filter-btn active" data-sub-filter="media">GARAGEM MÉDIA</button></li>
+                        <li><button class="filter-btn" data-sub-filter="maior">GARAGEM MAIOR</button></li>
+                        <li><button class="filter-btn" data-sub-filter="luxo">GARAGEM LUXO</button></li>
+                        <li><button class="filter-btn" data-sub-filter="gigante">GARAGEM GIGANTE</button></li>
+                    </ul>
+                    <ul class="subcategorias-list" data-parent-category="economia">
+                        <li><span style="color:var(--gold);font-weight:bold;">salários:</span></li>
+                        <li><button class="filter-btn" data-sub-filter="apostador-inicial">APOSTADOR INICIAL</button></li>
+                        <li><button class="filter-btn" data-sub-filter="apostador-astuto">APOSTADOR ASTUTO</button></li>
+                        <li><button class="filter-btn" data-sub-filter="mestre-apostas">MESTRE DAS APOSTAS</button></li>
+                        <li><button class="filter-btn" data-sub-filter="bossa-roleta">BOSSA DA ROLETA</button></li>
+                        <li><button class="filter-btn" data-sub-filter="magnata-cassino">MAGNATA DO CASSINO</button></li>
+                        <li><button class="filter-btn" data-sub-filter="imperador-monaco">IMPERADOR DE MÔNACO</button></li>
+                        <li><span style="color:var(--gold);font-weight:bold;">dinheiro:</span></li>
+                        <li><button class="filter-btn" data-sub-filter="500k">500K</button></li>
+                        <li><button class="filter-btn" data-sub-filter="1kk">1KK</button></li>
+                        <li><button class="filter-btn" data-sub-filter="3kk">3KK</button></li>
+                        <li><button class="filter-btn" data-sub-filter="5kk">5KK</button></li>
+                        <li><button class="filter-btn" data-sub-filter="7kk">7KK</button></li>
+                        <li><button class="filter-btn" data-sub-filter="12kk">12KK</button></li>
+                        <li><button class="filter-btn" data-sub-filter="20kk">20KK</button></li>
+                    </ul>
+                    <ul class="subcategorias-list" data-parent-category="armas">
+                        <li><button class="filter-btn active" data-sub-filter="armas-brancas">PACK ARMAS BRANCAS</button></li>
+                        <li><button class="filter-btn" data-sub-filter="armas-basicas">PACK ARMAS BÁSICAS</button></li>
+                        <li><button class="filter-btn" data-sub-filter="armas-avancadas">PACK ARMAS AVANÇADAS</button></li>
+                        <li><button class="filter-btn" data-sub-filter="armas-elite">PACK ARMAS ELITE</button></li>
+                    </ul>
+                    <ul class="subcategorias-list" data-parent-category="punicoes">
+                        <li><button class="filter-btn active" data-sub-filter="remover-prisao">REMOVER PRISÃO</button></li>
+                        <li><button class="filter-btn" data-sub-filter="remover-advertencia">REMOVER ADVERTÊNCIA</button></li>
+                        <li><button class="filter-btn" data-sub-filter="unban-flood">UNBAN FLOOD</button></li>
+                        <li><button class="filter-btn" data-sub-filter="unban">UNBAN</button></li>
+                    </ul>
+                    <ul class="subcategorias-list" data-parent-category="ilegal">
+                        <li><button class="filter-btn active" data-sub-filter="remover-blacklist">REMOVER BLACKLIST</button></li>
+                        <li><button class="filter-btn" data-sub-filter="kit-faccao-standard">Kit Facção Standard</button></li>
+                        <li><button class="filter-btn" data-sub-filter="kit-faccao-ultra">Kit Facção Ultra</button></li>
+                        <li><button class="filter-btn" data-sub-filter="kit-faccao-diamante">Kit Facção Diamante</button></li>
+                    </ul>
+                    <ul class="subcategorias-list" data-parent-category="extras">
+                        <li><button class="filter-btn active" data-sub-filter="verificado-instamonc">Verificado InstaMonc</button></li>
+                        <li><button class="filter-btn" data-sub-filter="acesso-moncFy">Acesso ao MoncFy (Músicas) (30 dias)</button></li>
+                        <li><button class="filter-btn" data-sub-filter="numero-personalizado">Número de Telefone Personalizado</button></li>
+                        <li><button class="filter-btn" data-sub-filter="visto-ny">Visto para New York</button></li>
+                        <li><button class="filter-btn" data-sub-filter="mochila-50kg">50KG Mochila</button></li>
+                        <li><button class="filter-btn" data-sub-filter="mochila-100kg">100KG Mochila</button></li>
+                        <li><button class="filter-btn" data-sub-filter="mochila-250kg">250KG Mochila</button></li>
+                        <li><button class="filter-btn" data-sub-filter="mochila-500kg">500KG Mochila</button></li>
+                    </ul>
                 </div>
-                
-                <div class="loja-sub-filters">
-                    <div class="sub-filter-container" data-parent-category="vip">
-                        <button class="filter-btn active" data-sub-filter="all">Todos</button>
-                        <button class="filter-btn" data-sub-filter="vip-member">VIP MEMBER</button>
-                        <button class="filter-btn" data-sub-filter="vip-silver">VIP SILVER</button>
-                        <button class="filter-btn" data-sub-filter="vip-gold">VIP GOLD</button>
-                        <button class="filter-btn" data-sub-filter="vip-platinum">VIP PLATINUM</button>
-                        <button class="filter-btn" data-sub-filter="vip-black">VIP BLACK</button>
-                        <button class="filter-btn" data-sub-filter="vip-royale">VIP FIRST ROYALE</button>
-                    </div>
-                    <div class="sub-filter-container" data-parent-category="fichas">
-                        <button class="filter-btn active" data-sub-filter="all">Todos</button>
-                        <button class="filter-btn" data-sub-filter="fichas-5k">5K</button>
-                        <button class="filter-btn" data-sub-filter="fichas-10k">10K</button>
-                        <button class="filter-btn" data-sub-filter="fichas-20k">20K</button>
-                        <button class="filter-btn" data-sub-filter="fichas-50k">50K</button>
-                        <button class="filter-btn" data-sub-filter="fichas-100k">100K</button>
-                    </div>
-                    <div class="sub-filter-container" data-parent-category="veiculos">
-                        <button class="filter-btn active" data-sub-filter="all">Todos</button>
-                        <button class="filter-btn" data-sub-filter="carros-start">Carros Start</button>
-                        <button class="filter-btn" data-sub-filter="carros-vip">Carros Vip</button>
-                        <button class="filter-btn" data-sub-filter="carros-exclusivos">Carros Exclusivos</button>
-                        <button class="filter-btn" data-sub-filter="carros-blindados">Carros Blindados</button>
-                        <button class="filter-btn" data-sub-filter="caminhoes-vans">Caminhões e Vans</button>
-                        <button class="filter-btn" data-sub-filter="motos">Motos</button>
-                    </div>
-                    <div class="sub-filter-container" data-parent-category="aeronaves">
-                        <button class="filter-btn active" data-sub-filter="all">Todos</button>
-                        <button class="filter-btn" data-sub-filter="helicopteros">Helicópteros</button>
-                        <button class="filter-btn" data-sub-filter="jatos">Jatos</button>
-                    </div>
-                    <div class="sub-filter-container" data-parent-category="garagem">
-                        <button class="filter-btn active" data-sub-filter="all">Todos</button>
-                        <button class="filter-btn" data-sub-filter="garagem-media">Garagem Média</button>
-                        <button class="filter-btn" data-sub-filter="garagem-maior">Garagem Maior</button>
-                        <button class="filter-btn" data-sub-filter="garagem-luxo">Garagem Luxo</button>
-                        <button class="filter-btn" data-sub-filter="garagem-gigante">Garagem Gigante</button>
-                    </div>
-                    <div class="sub-filter-container" data-parent-category="economia">
-                        <button class="filter-btn active" data-sub-filter="all">Todos</button>
-                        <button class="filter-btn" data-sub-filter="salarios">Salários</button>
-                        <button class="filter-btn" data-sub-filter="dinheiro">Dinheiro</button>
-                    </div>
-                    <div class="sub-filter-container" data-parent-category="armas">
-                        <button class="filter-btn active" data-sub-filter="all">Todos</button>
-                        <button class="filter-btn" data-sub-filter="armas-brancas">Armas Brancas</button>
-                        <button class="filter-btn" data-sub-filter="armas-basicas">Armas Básicas</button>
-                        <button class="filter-btn" data-sub-filter="armas-avancadas">Armas Avançadas</button>
-                        <button class="filter-btn" data-sub-filter="armas-elite">Armas Elite</button>
-                    </div>
-                    <div class="sub-filter-container" data-parent-category="punicoes">
-                        <button class="filter-btn active" data-sub-filter="all">Todos</button>
-                        <button class="filter-btn" data-sub-filter="remover-prisao">Remover Prisão</button>
-                        <button class="filter-btn" data-sub-filter="remover-advertencia">Remover Advertência</button>
-                        <button class="filter-btn" data-sub-filter="unban-flood">Unban Flood</button>
-                        <button class="filter-btn" data-sub-filter="unban">Unban</button>
-                    </div>
-                    <div class="sub-filter-container" data-parent-category="ilegal">
-                        <button class="filter-btn active" data-sub-filter="all">Todos</button>
-                        <button class="filter-btn" data-sub-filter="remover-blacklist">Remover Blacklist</button>
-                        <button class="filter-btn" data-sub-filter="kit-standard">Kit Facção Standard</button>
-                        <button class="filter-btn" data-sub-filter="kit-ultra">Kit Facção Ultra</button>
-                        <button class="filter-btn" data-sub-filter="kit-diamante">Kit Facção Diamante</button>
-                    </div>
-                    <div class="sub-filter-container" data-parent-category="extras">
-                        <button class="filter-btn active" data-sub-filter="all">Todos</button>
-                        <button class="filter-btn" data-sub-filter="verificado">Verificado InstaMonc</button>
-                        <button class="filter-btn" data-sub-filter="acesso-moncfy">Acesso ao MoncFy</button>
-                        <button class="filter-btn" data-sub-filter="tel-personalizado">Telefone Personalizado</button>
-                        <button class="filter-btn" data-sub-filter="visto-ny">Visto para NY</button>
-                        <button class="filter-btn" data-sub-filter="mochilas">Mochilas</button>
-                    </div>
-                </div>
-                
+
+                <!-- Itens da Loja (exemplo) -->
                 <div class="itens-container">
-                    
                     <div class="item-card fade-up" data-main-category="vip" data-subcategory="vip-member">
                         <div class="item-image">
-                            <img src="https://picsum.photos/400/300?random=1" alt="Plano VIP MEMBER">
+                            <img src="assets/img/MEMBER.png" alt="VIP MEMBER">
                         </div>
                         <div class="item-content">
                             <h3>VIP MEMBER</h3>
-                            <div class="item-details">
+                            <div class="item-details" style="display:none;">
                                 <p>Prioridade na fila, 100k em moeda do jogo, e um kit inicial aprimorado para começar sua jornada.</p>
                                 <div class="item-price">R$ 19,90</div>
                             </div>
@@ -160,13 +139,13 @@
                     </div>
                     <div class="item-card fade-up" data-main-category="vip" data-subcategory="vip-silver">
                         <div class="item-image">
-                            <img src="https://picsum.photos/400/300?random=2" alt="Plano VIP SILVER">
+                            <img src="assets/img/SILVER.png" alt="VIP SILVER">
                         </div>
                         <div class="item-content">
                             <h3>VIP SILVER</h3>
-                            <div class="item-details">
-                                <p>Todos os benefícios do VIP MEMBER, mais 250k e acesso exclusivo a 2 veículos básicos para VIPs.</p>
-                                <div class="item-price">R$ 39,90</div>
+                            <div class="item-details" style="display:none;">
+                                <p>Fila prioritária, 200k em moeda, kit prata e acesso a eventos exclusivos.</p>
+                                <div class="item-price">R$ 29,90</div>
                             </div>
                             <div class="item-buttons">
                                 <a href="#" class="btn-primary">COMPRAR</a>
@@ -174,16 +153,15 @@
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="item-card fade-up" data-main-category="fichas" data-subcategory="fichas-50k">
+                    <div class="item-card fade-up" data-main-category="fichas" data-subcategory="10k">
                         <div class="item-image">
-                            <img src="https://picsum.photos/400/300?random=3" alt="Pacote de Fichas 50K">
+                            <img src="assets/img/1000.gif" alt="Fichas 10K">
                         </div>
                         <div class="item-content">
-                            <h3>Pacote de Fichas 50K</h3>
-                            <div class="item-details">
-                                <p>Pacote de 50.000 fichas para usar em nossos cassinos, jogos de aposta e roletas.</p>
-                                <div class="item-price">R$ 10,00</div>
+                            <h3>Fichas 10K</h3>
+                            <div class="item-details" style="display:none;">
+                                <p>Adicione 10.000 fichas ao seu saldo para jogar no cassino.</p>
+                                <div class="item-price">R$ 14,90</div>
                             </div>
                             <div class="item-buttons">
                                 <a href="#" class="btn-primary">COMPRAR</a>
@@ -191,15 +169,15 @@
                             </div>
                         </div>
                     </div>
-                    <div class="item-card fade-up" data-main-category="fichas" data-subcategory="fichas-100k">
+                    <div class="item-card fade-up" data-main-category="veiculos" data-subcategory="carros-vip">
                         <div class="item-image">
-                            <img src="https://picsum.photos/400/300?random=4" alt="Pacote de Fichas 100K">
+                            <img src="assets/img/3.png" alt="Carro VIP">
                         </div>
                         <div class="item-content">
-                            <h3>Pacote de Fichas 100K</h3>
-                            <div class="item-details">
-                                <p>Pacote de 100.000 fichas para aumentar suas chances de se tornar um magnata do cassino.</p>
-                                <div class="item-price">R$ 18,00</div>
+                            <h3>Carro VIP</h3>
+                            <div class="item-details" style="display:none;">
+                                <p>Escolha um dos carros VIP exclusivos para se destacar nas ruas de Monaco RP.</p>
+                                <div class="item-price">R$ 99,90</div>
                             </div>
                             <div class="item-buttons">
                                 <a href="#" class="btn-primary">COMPRAR</a>
@@ -207,16 +185,15 @@
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="item-card fade-up" data-main-category="veiculos" data-subcategory="carros-exclusivos">
+                    <div class="item-card fade-up" data-main-category="armas" data-subcategory="armas-brancas">
                         <div class="item-image">
-                            <img src="https://picsum.photos/400/300?random=5" alt="Carro Esportivo Exclusivo">
+                            <img src="assets/img/BLACK.png" alt="Pack Armas Brancas">
                         </div>
                         <div class="item-content">
-                            <h3>Carro Esportivo</h3>
-                            <div class="item-details">
-                                <p>Um carro de alta performance com design único, feito para dominar as ruas de Los Santos.</p>
-                                <div class="item-price">R$ 50,00</div>
+                            <h3>Pack Armas Brancas</h3>
+                            <div class="item-details" style="display:none;">
+                                <p>Kit completo de armas brancas para sua proteção e diversão.</p>
+                                <div class="item-price">R$ 9,90</div>
                             </div>
                             <div class="item-buttons">
                                 <a href="#" class="btn-primary">COMPRAR</a>
@@ -224,144 +201,15 @@
                             </div>
                         </div>
                     </div>
-                    <div class="item-card fade-up" data-main-category="veiculos" data-subcategory="motos">
+                    <div class="item-card fade-up" data-main-category="extras" data-subcategory="mochila-100kg">
                         <div class="item-image">
-                            <img src="https://picsum.photos/400/300?random=6" alt="Moto esportiva">
+                            <img src="assets/img/4000.png" alt="Mochila 100KG">
                         </div>
                         <div class="item-content">
-                            <h3>Moto Esportiva</h3>
-                            <div class="item-details">
-                                <p>Uma moto de corrida com velocidade máxima para fugas cinematográficas e passeios de adrenalina.</p>
-                                <div class="item-price">R$ 35,00</div>
-                            </div>
-                            <div class="item-buttons">
-                                <a href="#" class="btn-primary">COMPRAR</a>
-                                <button class="btn-secondary btn-details">DETALHES</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item-card fade-up" data-main-category="aeronaves" data-subcategory="helicopteros">
-                        <div class="item-image">
-                            <img src="https://picsum.photos/400/300?random=7" alt="Helicóptero">
-                        </div>
-                        <div class="item-content">
-                            <h3>Helicóptero Executivo</h3>
-                            <div class="item-details">
-                                <p>Um meio de transporte aéreo para deslocamento rápido e acesso a áreas restritas e propriedades.</p>
-                                <div class="item-price">R$ 120,00</div>
-                            </div>
-                            <div class="item-buttons">
-                                <a href="#" class="btn-primary">COMPRAR</a>
-                                <button class="btn-secondary btn-details">DETALHES</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item-card fade-up" data-main-category="aeronaves" data-subcategory="jatos">
-                        <div class="item-image">
-                            <img src="https://picsum.photos/400/300?random=8" alt="Jato particular">
-                        </div>
-                        <div class="item-content">
-                            <h3>Jato Particular</h3>
-                            <div class="item-details">
-                                <p>Viaje com luxo e estilo em seu próprio jato particular, disponível para rotas exclusivas.</p>
-                                <div class="item-price">R$ 350,00</div>
-                            </div>
-                            <div class="item-buttons">
-                                <a href="#" class="btn-primary">COMPRAR</a>
-                                <button class="btn-secondary btn-details">DETALHES</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item-card fade-up" data-main-category="garagem" data-subcategory="garagem-media">
-                        <div class="item-image">
-                            <img src="https://picsum.photos/400/300?random=9" alt="Garagem Média">
-                        </div>
-                        <div class="item-content">
-                            <h3>Garagem Média</h3>
-                            <div class="item-details">
-                                <p>Um espaço seguro para guardar até 5 veículos. Ideal para colecionadores iniciantes.</p>
-                                <div class="item-price">R$ 25,00</div>
-                            </div>
-                            <div class="item-buttons">
-                                <a href="#" class="btn-primary">COMPRAR</a>
-                                <button class="btn-secondary btn-details">DETALHES</button>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="item-card fade-up" data-main-category="economia" data-subcategory="dinheiro">
-                        <div class="item-image">
-                            <img src="https://picsum.photos/400/300?random=10" alt="Pacote de Dinheiro 1KK">
-                        </div>
-                        <div class="item-content">
-                            <h3>Pacote de Dinheiro 1KK</h3>
-                            <div class="item-details">
-                                <p>Adicione 1.000.000 em dinheiro do jogo à sua conta para acelerar sua ascensão.</p>
-                                <div class="item-price">R$ 50,00</div>
-                            </div>
-                            <div class="item-buttons">
-                                <a href="#" class="btn-primary">COMPRAR</a>
-                                <button class="btn-secondary btn-details">DETALHES</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item-card fade-up" data-main-category="armas" data-subcategory="armas-avancadas">
-                        <div class="item-image">
-                            <img src="https://picsum.photos/400/300?random=11" alt="Armas Avançadas">
-                        </div>
-                        <div class="item-content">
-                            <h3>Pack Armas Avançadas</h3>
-                            <div class="item-details">
-                                <p>Um pacote completo com as armas mais potentes e confiáveis do servidor, como fuzis de precisão.</p>
-                                <div class="item-price">R$ 80,00</div>
-                            </div>
-                            <div class="item-buttons">
-                                <a href="#" class="btn-primary">COMPRAR</a>
-                                <button class="btn-secondary btn-details">DETALHES</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item-card fade-up" data-main-category="punicoes" data-subcategory="remover-prisao">
-                        <div class="item-image">
-                            <img src="https://picsum.photos/400/300?random=12" alt="Remover Prisão">
-                        </div>
-                        <div class="item-content">
-                            <h3>Remover Prisão</h3>
-                            <div class="item-details">
-                                <p>Libere seu personagem instantaneamente da prisão, sem precisar cumprir a pena.</p>
-                                <div class="item-price">R$ 30,00</div>
-                            </div>
-                            <div class="item-buttons">
-                                <a href="#" class="btn-primary">COMPRAR</a>
-                                <button class="btn-secondary btn-details">DETALHES</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item-card fade-up" data-main-category="ilegal" data-subcategory="remover-blacklist">
-                        <div class="item-image">
-                            <img src="https://picsum.photos/400/300?random=13" alt="Remover Blacklist">
-                        </div>
-                        <div class="item-content">
-                            <h3>Remover Blacklist</h3>
-                            <div class="item-details">
-                                <p>Remova sua marca de blacklist, permitindo que você retorne ao submundo do crime.</p>
-                                <div class="item-price">R$ 75,00</div>
-                            </div>
-                            <div class="item-buttons">
-                                <a href="#" class="btn-primary">COMPRAR</a>
-                                <button class="btn-secondary btn-details">DETALHES</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item-card fade-up" data-main-category="extras" data-subcategory="visto-ny">
-                        <div class="item-image">
-                            <img src="https://picsum.photos/400/300?random=14" alt="Visto para New York">
-                        </div>
-                        <div class="item-content">
-                            <h3>Visto para New York</h3>
-                            <div class="item-details">
-                                <p>Obtenha acesso especial à nossa área exclusiva de New York para novas oportunidades e histórias.</p>
-                                <div class="item-price">R$ 150,00</div>
+                            <h3>Mochila 100KG</h3>
+                            <div class="item-details" style="display:none;">
+                                <p>Aumente sua capacidade de carga para 100KG e leve mais itens em suas aventuras.</p>
+                                <div class="item-price">R$ 24,90</div>
                             </div>
                             <div class="item-buttons">
                                 <a href="#" class="btn-primary">COMPRAR</a>
@@ -374,9 +222,11 @@
         </section>
     </main>
 
+    <!-- Rodapé Dinâmico -->
     <footer id="main-footer"></footer>
-    
+
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="assets/js/script.js"></script>
+    <script type="module" src="./assets/js/script.js"></script>
 </body>
+
 </html>

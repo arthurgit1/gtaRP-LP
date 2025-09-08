@@ -1,5 +1,5 @@
-// Importando módulos para carregar o cabeçalho, rodapé e configurações específicas
-import { loadHeader } from './loadHeader.js';
+// Importando os módulos
+import { loadHeader } from './loadHeader.js';  // Verifique se o caminho está correto
 import { loadFooter } from './loadFooter.js';
 import { setupHeader } from './header.js';
 import { setupFaq } from './faq.js';
@@ -46,3 +46,15 @@ if (document.querySelector('.planos-slider')) {
         },
     });
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+    const hamburger = document.querySelector('.hamburger');
+    const menu = document.querySelector('.menu');
+    
+    if (hamburger && menu) {
+        hamburger.addEventListener('click', () => {
+            menu.classList.toggle('active'); // Adiciona ou remove a classe 'active'
+        });
+    }
+});
+

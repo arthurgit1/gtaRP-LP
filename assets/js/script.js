@@ -1,5 +1,4 @@
-// Importando os módulos
-import { loadHeader } from './loadHeader.js';  // Verifique se o caminho está correto
+import { loadHeader } from './loadHeader.js';
 import { loadFooter } from './loadFooter.js';
 import { setupHeader } from './header.js';
 import { setupFaq } from './faq.js';
@@ -7,79 +6,90 @@ import { setupGalleryFilters } from './gallery.js';
 import { setupStoreFilters } from './store.js';
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Carregar o Header e Footer
+    // Carregar Header e Footer
     loadHeader();
     loadFooter();
 
-    // Configurar o Header (scroll e menu hambúrguer)
+    // Configurar Header, FAQ, Galeria e Loja
     setupHeader();
-
-    // Configurar o FAQ (mostrar/esconder respostas)
     setupFaq();
-
-    // Configurar os Filtros da Galeria
     setupGalleryFilters();
-
-    // Configurar os Filtros da Loja
     setupStoreFilters();
-});
 
-// Inicializar o Swiper para os planos
-if (document.querySelector('.planos-slider')) {
-    const planosSwiper = new Swiper('.planos-slider', {
-        loop: true, 
-        slidesPerView: 1, 
-        spaceBetween: 20,
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-        breakpoints: {
-            768: {
-                slidesPerView: 2, // 2 planos por vez em telas médias
-                spaceBetween: 30,
-            },
-            1024: {
-                slidesPerView: 3, // 3 planos por vez em telas grandes
-                spaceBetween: 40,
-            },
-        },
-    });
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-    // Seleciona o botão do menu hamburguer e o menu
+    // Menu hamburguer
     const hamburger = document.querySelector('.hamburger');
     const menu = document.querySelector('.menu');
+    if (hamburger && menu) {
+        hamburger.addEventListener('click', () => {
+            menu.classList.toggle('active');
+        });
+    }
 
-    // Adiciona o evento de clique no hamburger para alternar a classe 'active'
-    hamburger.addEventListener('click', () => {
-        menu.classList.toggle('active'); // Alterna a classe 'active' no menu
-    });
-});
+    // Swiper para filtros da loja
+    if (document.querySelector('.loja-main-filters-slider')) {
+        new Swiper('.loja-main-filters-slider', {
+            loop: false,
+            slidesPerView: 'auto',
+            spaceBetween: 15,
+            freeMode: true,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            }
+        });
+    }
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Seleciona todos os filtros principais
+    // Filtros principais e subfiltros da loja
     const mainFilterButtons = document.querySelectorAll('.filter-btn[data-main-filter]');
-
-    // Seleciona todos os contêineres de subfiltros
     const subFilterContainers = document.querySelectorAll('.sub-filter-container');
+    const subFilterButtons = document.querySelectorAll('.sub-filter-container .filter-btn');
+    const items = document.querySelectorAll('.item-card');
 
-    // Adiciona evento de clique em cada filtro principal
     mainFilterButtons.forEach(button => {
         button.addEventListener('click', function() {
+            mainFilterButtons.forEach(b => b.classList.remove('active'));
+            button.classList.add('active');
             const filterCategory = button.getAttribute('data-main-filter');
-
-            // Filtra e exibe as subcategorias para a categoria correspondente
             subFilterContainers.forEach(container => {
-                if (container.getAttribute('data-parent-category') === filterCategory || filterCategory === 'all') {
+                if (container.getAttribute('data-parent-category') === filterCategory) {
                     container.classList.add('active');
                 } else {
                     container.classList.remove('active');
                 }
             });
+            // Exibe todos os itens se "Todos" for selecionado
+            if (filterCategory === 'all') {
+                items.forEach(item => item.style.display = 'block');
+                subFilterContainers.forEach(container => container.classList.remove('active'));
+            } else {
+                // Exibe apenas itens da categoria principal
+                items.forEach(item => {
+                    item.style.display = (item.getAttribute('data-main-category') === filterCategory) ? 'block' : 'none';
+                });
+            }
+        });
+    });
 
-            // Aqui você pode adicionar lógica adicional para ocultar ou exibir itens de loja com base no filtro selecionado
+    subFilterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const parent = button.closest('.sub-filter-container');
+            const parentCategory = parent.getAttribute('data-parent-category');
+            const subFilterValue = button.getAttribute('data-sub-filter');
+            // Ativa apenas o subfiltro clicado
+            parent.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            button.classList.add('active');
+            items.forEach(item => {
+                const itemCategory = item.getAttribute('data-main-category');
+                const itemSubcategory = item.getAttribute('data-subcategory');
+                if (
+                    (subFilterValue === 'all' && itemCategory === parentCategory) ||
+                    (itemCategory === parentCategory && itemSubcategory === subFilterValue)
+                ) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
         });
     });
 });

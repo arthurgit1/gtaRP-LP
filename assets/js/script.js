@@ -58,3 +58,28 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    // Seleciona todos os filtros principais
+    const mainFilterButtons = document.querySelectorAll('.filter-btn[data-main-filter]');
+
+    // Seleciona todos os contêineres de subfiltros
+    const subFilterContainers = document.querySelectorAll('.sub-filter-container');
+
+    // Adiciona evento de clique em cada filtro principal
+    mainFilterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const filterCategory = button.getAttribute('data-main-filter');
+
+            // Filtra e exibe as subcategorias para a categoria correspondente
+            subFilterContainers.forEach(container => {
+                if (container.getAttribute('data-parent-category') === filterCategory || filterCategory === 'all') {
+                    container.classList.add('active');
+                } else {
+                    container.classList.remove('active');
+                }
+            });
+
+            // Aqui você pode adicionar lógica adicional para ocultar ou exibir itens de loja com base no filtro selecionado
+        });
+    });
+});

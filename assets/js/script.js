@@ -47,14 +47,14 @@ if (document.querySelector('.planos-slider')) {
     });
 }
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
+    // Seleciona o botão do menu hamburguer e o menu
     const hamburger = document.querySelector('.hamburger');
     const menu = document.querySelector('.menu');
-    
-    if (hamburger && menu) {
-        hamburger.addEventListener('click', () => {
-            menu.classList.toggle('active'); // Adiciona ou remove a classe 'active'
-        });
-    }
+
+    // Adiciona o evento de clique no hamburger para alternar a classe 'active'
+    hamburger.addEventListener('click', () => {
+        menu.classList.toggle('active'); // Alterna a classe 'active' no menu
+    });
 });
 

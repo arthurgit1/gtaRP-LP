@@ -4,12 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MONACO RP - O Maior Servidor de RP da América Latina</title>
+    <title>Monaco RP - O Maior Servidor de RP da América Latina</title>
     <meta name="description" content="Viva a experiência do roleplay no GTA V de forma única no Monaco RP, o maior servidor da América Latina.">
-    <meta property="og:title" content="MONACO RP - O Maior Servidor de RP da América Latina">
+    <meta property="og:title" content="Monaco RP - O Maior Servidor de RP da América Latina">
     <meta property="og:description" content="Viva a experiência do roleplay no GTA V de forma única no Monaco RP, o maior servidor da América Latina.">
     <meta property="og:image" content="assets/img/No Background.png">
     <meta name="twitter:card" content="summary_large_image">
+    
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -17,41 +18,21 @@
 </head>
 
 <body>
-
     <!-- Cabeçalho Dinâmico -->
     <header id="main-header"></header>
 
     <main>
-        <!-- Seção Hero -->
+        <!-- Seção Hero (principal) -->
         <section class="hero" id="hero">
-            <div class="parallax-bg"></div>
-            <div class="hero-overlay"></div>
-            <img src="assets/img/No Background.png" class="floating-icon icon1" alt="Ícone flutuante 1">
-            <img src="assets/img/No Background.png" class="floating-icon icon2" alt="Ícone flutuante 2">
-            <img src="assets/img/No Background.png" class="floating-icon icon3" alt="Ícone flutuante 3">
-            <div class="hero-content fade-up">
+            <div class="hero-content">
                 <h1>O MAIOR SERVIDOR DE RP<br>DA AMÉRICA LATINA</h1>
-                <p>Viva a experiência do roleplay no GTA V de forma única.</p>
+                <p>Viva a experiência do roleplay no GTA V de forma única no Monaco RP.</p>
                 <div class="hero-buttons">
                     <a href="#starter-pack" class="btn-primary">JOGAR AGORA</a>
                     <a href="https://discord.gg" target="_blank" class="btn-discord">
                         <i class="fab fa-discord"></i> ENTRAR NO DISCORD
                     </a>
                 </div>
-                <div class="server-stats">
-                    <div class="stat">
-                        <span class="stat-number" id="online-players">1250</span>
-                        <span class="stat-label">JOGADORES ONLINE</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">24/7</span>
-                        <span class="stat-label">SERVIDOR ATIVO</span>
-                    </div>
-                </div>
-            </div>
-            <div class="scroll-indicator">
-                <span>Role para explorar</span>
-                <div class="scroll-arrow"></div>
             </div>
         </section>
 
@@ -85,35 +66,51 @@
                 <h2>Conheça os Planos</h2>
                 <p class="section-subtitle">Garanta acesso a benefícios exclusivos dentro do servidor.</p>
 
-                <div class="swiper planos-slider">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="plano-card">
-                                <div class="plano-header">
-                                    <img src="assets/img/4000.png" alt="Plano Básico">
-                                    <h3>Plano Básico</h3>
-                                    <div class="plano-price">R$ 19,90</div>
-                                </div>
-                                <div class="plano-body">
-                                    <ul>
-                                        <li><i class="fas fa-check"></i> Prioridade na Fila</li>
-                                        <li><i class="fas fa-check"></i> 100k em Moeda do Jogo</li>
-                                        <li><i class="fas fa-check"></i> Kit de Boas-vindas</li>
-                                        <li><i class="fas fa-check"></i> 1 Veículo Básico</li>
-                                    </ul>
-                                </div>
-                                <div class="plano-footer">
-                                    <a href="#" class="btn-primary">COMPRAR AGORA</a>
-                                </div>
-                            </div>
+                <div class="planos-container">
+                    <div class="plano-card">
+                        <div class="plano-header">
+                            <img src="assets/img/4000.png" alt="Plano Básico">
+                            <h3>Plano Básico</h3>
+                            <div class="plano-price">R$ 19,90</div>
                         </div>
-                        <!-- Adicione outros planos aqui -->
+                        <div class="plano-body">
+                            <ul>
+                                <li><i class="fas fa-check"></i> Prioridade na Fila</li>
+                                <li><i class="fas fa-check"></i> 100k em Moeda do Jogo</li>
+                                <li><i class="fas fa-check"></i> Kit de Boas-vindas</li>
+                                <li><i class="fas fa-check"></i> 1 Veículo Básico</li>
+                            </ul>
+                        </div>
+                        <div class="plano-footer">
+                            <a href="#" class="btn-primary">COMPRAR AGORA</a>
+                        </div>
                     </div>
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
+
+                    <!-- Outros planos aqui -->
+                    <div class="plano-card">
+                        <div class="plano-header">
+                            <img src="assets/img/4000.png" alt="Plano VIP">
+                            <h3>Plano VIP</h3>
+                            <div class="plano-price">R$ 39,90</div>
+                        </div>
+                        <div class="plano-body">
+                            <ul>
+                                <li><i class="fas fa-check"></i> Prioridade na Fila</li>
+                                <li><i class="fas fa-check"></i> 250k em Moeda do Jogo</li>
+                                <li><i class="fas fa-check"></i> Kit de Boas-vindas Aprimorado</li>
+                                <li><i class="fas fa-check"></i> 2 Veículos VIP</li>
+                            </ul>
+                        </div>
+                        <div class="plano-footer">
+                            <a href="#" class="btn-primary">COMPRAR AGORA</a>
+                        </div>
+                    </div>
+
+                    <!-- Continue adicionando outros planos aqui -->
                 </div>
             </div>
         </section>
+
 
         <!-- Seção Loja -->
         <section id="loja" class="fade-up">
@@ -132,7 +129,7 @@
                             <a href="#" class="btn-primary">COMPRAR AGORA</a>
                         </div>
                     </div>
-                    <!-- Outros itens da loja aqui -->
+                    <!-- Adicione outros itens da loja aqui -->
                 </div>
                 <div class="botoes-container-align">
                     <a href="#" class="btn-outline">VER TODOS OS ITENS</a>
@@ -145,12 +142,14 @@
             <div class="container">
                 <h2>Galeria de Ostentação</h2>
                 <p class="section-subtitle">Veja o que nossos jogadores estão fazendo no servidor</p>
+                
                 <div class="gallery-filters">
                     <button class="filter-btn active" data-filter="all">Tudo</button>
                     <button class="filter-btn" data-filter="vehicles">Veículos</button>
                     <button class="filter-btn" data-filter="properties">Propriedades</button>
                     <button class="filter-btn" data-filter="events">Eventos</button>
                 </div>
+
                 <div class="galeria-grid">
                     <div class="galeria-item" data-category="vehicles">
                         <img src="assets/img/4000.png" alt="Supercarro no Monaco RP">
@@ -159,10 +158,20 @@
                             <p>Veículo disponível no Plano Magnata</p>
                         </div>
                     </div>
-                    <!-- Outras imagens aqui -->
+
+                    <div class="galeria-item" data-category="properties">
+                        <img src="assets/img/4000.png" alt="Mansão de Luxo">
+                        <div class="gallery-overlay">
+                            <h3>Mansão de Luxo</h3>
+                            <p>Interior personalizável</p>
+                        </div>
+                    </div>
+
+                    <!-- Outras imagens da galeria aqui -->
                 </div>
             </div>
         </section>
+
 
         <!-- Seção FAQ -->
         <section id="faq" class="fade-up">
@@ -179,7 +188,7 @@
                             <p>Sim, é necessário ter uma cópia legítima do GTA V para jogar no Monaco RP através do FiveM.</p>
                         </div>
                     </div>
-                    <!-- Outras perguntas aqui -->
+                    <!-- Adicione outras perguntas aqui -->
                 </div>
             </div>
         </section>
